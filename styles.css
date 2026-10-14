@@ -314,3 +314,13 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .cta-band .btn:hover { background: transparent; }
 .creds, .community, .listings-band { border-block: 1px solid var(--line); }
 .nav { align-items: center; }
+
+/* Fixed black header with white type */
+.topbar { border-bottom: 1px solid rgba(255,255,255,.12); }
+.site-head { background: var(--fir); color: var(--on-fir); border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: none; }
+.site-head .mark, .site-head .mark span { color: var(--on-fir); }
+.site-head .nav a { color: var(--on-fir-muted); }
+.site-head .nav a:hover { color: var(--on-fir); }
+.site-head .nav .cta-link { color: var(--on-fir); border-color: var(--on-fir); }
+.site-head .nav .cta-link:hover { background: var(--on-fir); color: var(--fir); }
+.site-head :focus-visible { outline-color: var(--on-fir); }
