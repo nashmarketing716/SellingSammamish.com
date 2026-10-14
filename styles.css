@@ -123,6 +123,7 @@ p { margin: 0; }
 .cred { padding: 2rem 1.25rem 2rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
 @media (min-width: 56rem) { .cred { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.1); padding-left: 1.5rem; } .cred:first-child { padding-left: 0; } .cred:last-child { border-right: 0; } }
 .cred .num { font-family: var(--display); font-size: 2.4rem; line-height: 1; color: var(--brass); font-variant-numeric: lining-nums tabular-nums; }
+.cred .num { white-space: nowrap; font-size: clamp(1.9rem, 8vw, 2.4rem); }
 .cred .what { margin-top: .6rem; font-size: .9rem; color: var(--on-fir-muted); line-height: 1.45; }
 
 /* Sections */
