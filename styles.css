@@ -236,6 +236,7 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .reach-item { display: grid; gap: .25rem; }
 .reach-item .label { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
 .reach-item .value { font-family: var(--display); font-size: 1.5rem; user-select: all; overflow-wrap: anywhere; }
+.reach-item .phone { font-family: var(--body); font-weight: 500; font-size: 1.4rem; letter-spacing: .01em; font-variant-numeric: lining-nums tabular-nums; color: inherit; text-decoration: none; user-select: text; }
 form { display: grid; gap: 1rem; }
 .row2 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 label { display: grid; gap: .35rem; font-size: .82rem; font-weight: 600; }
