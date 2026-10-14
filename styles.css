@@ -383,3 +383,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .site-head .nav .cta-link { background: #0a0a0a; color: #ffffff; border-color: #0a0a0a; }
 .site-head .nav .cta-link:hover { background: #ffffff; color: #0a0a0a; border-color: #0a0a0a; }
 .site-head :focus-visible, .topbar :focus-visible { outline-color: #0a0a0a; }
+/* Instagram: heading on top, videos underneath on every screen size */
+@media (min-width: 56rem) { .social-grid { grid-template-columns: 1fr; gap: 2.5rem; align-items: start; } }
+.social-copy { max-width: 46rem; }
+@media (min-width: 56rem) { .ig-feed.has-embeds { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
