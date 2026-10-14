@@ -327,3 +327,6 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .site-head .nav .cta-link { color: var(--on-fir); border-color: var(--on-fir); }
 .site-head .nav .cta-link:hover { background: var(--on-fir); color: var(--fir); }
 .site-head :focus-visible { outline-color: var(--on-fir); }
+
+/* Bodoni draws "#" as a hairline; set it in the sans at a heavy weight */
+.hash { font-family: var(--body); font-weight: 700; font-size: .78em; vertical-align: .08em; margin-right: .04em; }
