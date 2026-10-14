@@ -1,19 +1,21 @@
-/* Layout: a fairway-green estate page. Fog ground, fir ink, brass for the one
-   accent. A topographic contour field in the hero stands in for the Sahalee
-   fairways; a sales ledger is the page's proof. */
+/* Layout: a north-plateau estate page in the Nash palette shared with
+   refractivelensexchange.com: cool slate ground, deep navy bands, teal as the
+   one accent (mint on navy). A topographic contour field in the hero stands in
+   for the Sahalee fairways; a sales ledger is the page's proof. */
 :root {
-  --fog: #eef0eb;
-  --paper: #f8f9f6;
-  --ink: #16211d;
-  --fir: #1f3a33;
-  --brass: #94722f;
-  --muted: #56645e;
-  --line: #d3d9d1;
-  --contour: rgba(31, 58, 51, .16);
-  --on-fir: #eef0eb;
-  --on-fir-muted: #b7c4bd;
-  --flag-bg: #f3e6c8;
-  --flag-fg: #6b5120;
+  --fog: #f5f7f8;
+  --paper: #ffffff;
+  --ink: #0e1e2b;
+  --fir: #16293a;
+  --brass: #0b6e69;
+  --mint: #7fd3cc;
+  --muted: #4a5b64;
+  --line: #e1e6ea;
+  --contour: rgba(11, 110, 105, .14);
+  --on-fir: #eef4f6;
+  --on-fir-muted: #a9bac3;
+  --flag-bg: #e7f1f0;
+  --flag-fg: #0b5f5b;
 
   --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
@@ -28,20 +30,22 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --fog: #111814; --paper: #172019; --ink: #e5eae3; --fir: #0c1411;
-    --brass: #cfaa62; --muted: #9caaa2; --line: #2b3832;
-    --contour: rgba(207, 170, 98, .13); --on-fir: #e5eae3; --on-fir-muted: #9caaa2;
-    --flag-bg: #3a2f17; --flag-fg: #e9cf96;
+    --fog: #0b1722; --paper: #102130; --ink: #e6eef1; --fir: #071019;
+    --brass: #7fd3cc; --mint: #7fd3cc; --muted: #a9bac3; --line: #23384a;
+    --contour: rgba(127, 211, 204, .12); --on-fir: #e6eef1; --on-fir-muted: #a9bac3;
+    --flag-bg: #123b3a; --flag-fg: #7fd3cc;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --fog: #111814; --paper: #172019; --ink: #e5eae3; --fir: #0c1411;
-  --brass: #cfaa62; --muted: #9caaa2; --line: #2b3832;
-  --contour: rgba(207, 170, 98, .13); --on-fir: #e5eae3; --on-fir-muted: #9caaa2;
-  --flag-bg: #3a2f17; --flag-fg: #e9cf96;
+  --fog: #0b1722; --paper: #102130; --ink: #e6eef1; --fir: #071019;
+  --brass: #7fd3cc; --mint: #7fd3cc; --muted: #a9bac3; --line: #23384a;
+  --contour: rgba(127, 211, 204, .12); --on-fir: #e6eef1; --on-fir-muted: #a9bac3;
+  --flag-bg: #123b3a; --flag-fg: #7fd3cc;
   color-scheme: dark;
 }
+/* On navy bands the accent switches to mint for contrast. */
+.creds, .community, .listings-band { --brass: var(--mint); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -270,9 +274,22 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .aside-card .value { font-family: var(--display); font-size: 1.5rem; }
 .aside-photo { width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 
-/* Listing gallery */
-.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
-@media (max-width: 40rem) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.gal-tile { display: block; overflow: hidden; aspect-ratio: 396 / 530; max-width: 100%; background: var(--fir); }
-.gal-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-.gal-tile:hover img { transform: scale(1.03); }
+/* Listing strip: a horizontal, swipeable row on a navy band */
+.listings-band { background: var(--fir); color: var(--on-fir); }
+.listings-band .lede { color: var(--on-fir-muted); }
+.strip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 2rem; }
+.strip-head > div:first-child { display: grid; gap: .75rem; max-width: 40rem; }
+.strip-nav { display: flex; gap: .5rem; }
+.strip-btn { width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid var(--on-fir-muted); background: transparent; color: var(--on-fir); font-size: 1.2rem; cursor: pointer; }
+.strip-btn:hover { background: var(--mint); border-color: var(--mint); color: var(--fir); }
+.gallery { display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 0; padding-bottom: 1.25rem; scrollbar-color: var(--mint) transparent; }
+.gal-card { flex: 0 0 min(19rem, 78vw); scroll-snap-align: start; display: grid; gap: .75rem; text-decoration: none; color: var(--on-fir); }
+.gal-tile { display: block; overflow: hidden; aspect-ratio: 396 / 530; max-width: 100%; background: var(--fog); }
+.gal-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.gal-card:hover .gal-tile img { transform: scale(1.04); }
+.gal-meta { display: flex; justify-content: space-between; gap: .75rem; align-items: baseline; }
+.gal-meta strong { font-family: var(--display); font-weight: 400; font-size: 1.2rem; }
+.gal-meta span { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--mint); white-space: nowrap; }
+.gal-card.end { flex-basis: min(16rem, 70vw); align-content: center; justify-items: start; border: 1px solid var(--navy-line, rgba(255,255,255,.18)); padding: 1.5rem; }
+.gal-card.end strong { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.2; }
+.gal-card.end span { color: var(--mint); font-weight: 600; }

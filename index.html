@@ -287,22 +287,48 @@
     </div>
   </section>
 
-  <section class="block" id="listings">
+  <section class="block listings-band" id="listings">
     <div class="wrap">
-      <div class="head-row">
+      <div class="strip-head">
         <div>
           <p class="eyebrow">Recently on the market</p>
           <h2>Sahalee and Timberline Ridge listings</h2>
+          <p class="lede">New listings, pending sales and just-sold homes on the north Sammamish plateau. Swipe to see more.</p>
         </div>
-        <p class="lede">New listings, pending sales and just-sold homes from Ericka's Instagram. Tap any photo to see more.</p>
+        <div class="strip-nav">
+          <button class="strip-btn" type="button" id="strip-prev" aria-label="Previous listings">←</button>
+          <button class="strip-btn" type="button" id="strip-next" aria-label="More listings">→</button>
+        </div>
       </div>
-      <div class="gallery">
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-retreat.jpg" width="396" height="530" alt="Pacific Northwest retreat in Sahalee Estates, Sammamish" loading="lazy"></a>
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-just-sold.jpg" width="396" height="530" alt="Just sold in Sahalee Estates" loading="lazy"></a>
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/timberline-ridge-pending.jpg" width="396" height="530" alt="Pending at $2,200,000 in Timberline Ridge, overlooking Lake Sammamish" loading="lazy"></a>
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/timberline-ridge-new-price.jpg" width="396" height="530" alt="New price, $2,200,000 in Timberline Ridge" loading="lazy"></a>
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-pending.jpg" width="396" height="530" alt="Pending in Sahalee" loading="lazy"></a>
-        <a class="gal-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/timberline-ridge-just-sold.jpg" width="396" height="530" alt="Just sold in Timberline Ridge" loading="lazy"></a>
+      <div class="gallery" id="gallery">
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/sahalee-retreat.jpg" width="396" height="530" alt="Pacific Northwest retreat in Sahalee Estates, Sammamish" loading="lazy"></span>
+          <span class="gal-meta"><strong>Pacific Northwest retreat</strong><span>Sahalee Estates</span></span>
+        </a>
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/sahalee-just-sold.jpg" width="396" height="530" alt="Just sold in Sahalee Estates" loading="lazy"></span>
+          <span class="gal-meta"><strong>Just sold</strong><span>Sahalee Estates</span></span>
+        </a>
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/timberline-ridge-pending.jpg" width="396" height="530" alt="Pending at $2,200,000 in Timberline Ridge, overlooking Lake Sammamish" loading="lazy"></span>
+          <span class="gal-meta"><strong>Pending · $2.2M</strong><span>Timberline Ridge</span></span>
+        </a>
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/sahalee-pending.jpg" width="396" height="530" alt="Pending in Sahalee" loading="lazy"></span>
+          <span class="gal-meta"><strong>Pending</strong><span>Sahalee</span></span>
+        </a>
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/timberline-ridge-just-sold.jpg" width="396" height="530" alt="Just sold in Timberline Ridge" loading="lazy"></span>
+          <span class="gal-meta"><strong>Just sold</strong><span>Timberline Ridge</span></span>
+        </a>
+        <a class="gal-card" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <span class="gal-tile"><img src="/images/timberline-ridge-new-price.jpg" width="396" height="530" alt="New price, $2,200,000 in Timberline Ridge" loading="lazy"></span>
+          <span class="gal-meta"><strong>New price · $2.2M</strong><span>Timberline Ridge</span></span>
+        </a>
+        <a class="gal-card end" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">
+          <strong>See every listing on Instagram</strong>
+          <span>@ericka.nash.real.estate →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -612,6 +638,15 @@ if (instagramPosts.length) {
   sc.async = true; sc.src = "https://www.instagram.com/embed.js";
   document.body.appendChild(sc);
 }
+
+/* Listing strip arrows */
+(function () {
+  const g = document.getElementById("gallery");
+  if (!g) return;
+  const step = () => (g.querySelector(".gal-card")?.getBoundingClientRect().width || 300) + 20;
+  document.getElementById("strip-prev").addEventListener("click", () => g.scrollBy({ left: -step(), behavior: "smooth" }));
+  document.getElementById("strip-next").addEventListener("click", () => g.scrollBy({ left: step(), behavior: "smooth" }));
+})();
 
 /* Topographic contours: concentric, noise-warped rings like a course survey. */
 (function topo() {
