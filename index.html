@@ -122,7 +122,7 @@ p { margin: 0; }
 
 /* Credentials band */
 .creds { background: var(--fir); color: var(--on-fir); }
-.creds .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0; padding-block: 0; }
+.creds .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0; padding-block: 0; }
 .cred { padding: 2rem 1.25rem 2rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
 @media (min-width: 56rem) { .cred { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.1); padding-left: 1.5rem; } .cred:first-child { padding-left: 0; } .cred:last-child { border-right: 0; } }
 .cred .num { font-family: var(--display); font-size: 2.4rem; line-height: 1; color: var(--brass); font-variant-numeric: lining-nums tabular-nums; }
@@ -251,6 +251,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
       <a href="#about">About</a>
       <a href="#neighborhoods">Neighborhoods</a>
       <a href="#sales">Sales</a>
+      <a href="#testimonials">Reviews</a>
       <a href="#services">Services</a>
       <a class="cta-link" href="#contact">Contact</a>
     </nav>
@@ -284,8 +285,9 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
     <div class="wrap">
       <div class="cred"><div class="num">#1</div><div class="what">Realtor in Sahalee Estates, top producer there every year from 2020 to 2025</div></div>
       <div class="cred"><div class="num">$85M+</div><div class="what">Sold in Sahalee Estates</div></div>
-      <div class="cred"><div class="num">Top 1.5%</div><div class="what">Of agents nationwide, per RealTrends</div></div>
-      <div class="cred"><div class="num">7 yrs</div><div class="what">RealTrends “The Thousand,” 2019 to 2025</div></div>
+      <div class="cred"><div class="num">Top 1.5%</div><div class="what">Nationwide, and RealTrends “The Thousand” 2019 to 2025</div></div>
+      <div class="cred"><div class="num">104</div><div class="what">Homes sold, from $637K to $3.9M</div></div>
+      <div class="cred"><div class="num">5.0 ★</div><div class="what">Zillow rating across 17 client reviews</div></div>
     </div>
   </section>
 
@@ -362,7 +364,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
           <p class="eyebrow">Sales ledger</p>
           <h2>Recent sales and listings</h2>
         </div>
-        <p class="lede">Twenty Eastside homes from Ericka's Compass record. Filter by city to see where she works most.</p>
+        <p class="lede">Twenty recent Eastside homes from Ericka's 104 sales, averaging $1.7M. Filter by city to see where she works most.</p>
       </div>
       <div class="ledger-tools" role="group" aria-label="Filter by city" id="filters"></div>
       <div class="ledger-scroll">
@@ -375,7 +377,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
       </div>
       <div class="ledger-foot">
         <span>Showing <strong id="ledger-count">0</strong> homes · total <strong id="ledger-total">$0</strong></span>
-        <span>Source: Ericka's Compass agent profile. Sold prices as listed there.</span>
+        <span>A selection of her 104 sales. Source: Compass agent profile.</span>
       </div>
     </div>
   </section>
@@ -445,15 +447,17 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">Client words <span class="flag">Sample text, replace with real reviews</span></p>
-          <h2>What clients say</h2>
+          <p class="eyebrow">Client reviews · 5.0 on Zillow</p>
+          <h2>What sellers say</h2>
         </div>
+        <p class="lede">Seventeen verified reviews on Zillow, every one of them five stars. A few from Sammamish sellers:</p>
       </div>
       <div class="quotes">
-        <figure class="quote"><blockquote>“Ericka staged our home like a magazine spread and had multiple offers in the first weekend.”</blockquote><cite>Seller, Sahalee Estates</cite></figure>
-        <figure class="quote"><blockquote>“She knew the house we wanted was coming before it ever hit the market.”</blockquote><cite>Buyer, Sammamish</cite></figure>
-        <figure class="quote"><blockquote>“We moved from out of state and she made the Eastside feel like home in one visit.”</blockquote><cite>Relocating family, Redmond</cite></figure>
+        <figure class="quote"><blockquote>“Ericka is a superlative real estate broker. She is smart, intuitive, highly knowledgeable, energetic, personable, patient, and an excellent listener.”</blockquote><cite>jdsclg86 · Sold a townhouse in Sammamish, 2023</cite></figure>
+        <figure class="quote"><blockquote>“She was able to get a full-price offer and get our house closed in 2 1/2 weeks.”</blockquote><cite>Andy Breidenbach · Sold a home in Sammamish, 2022</cite></figure>
+        <figure class="quote"><blockquote>“Ericka knows what buyers like.”</blockquote><cite>YIYEH · Sold a home in Sammamish, 2025</cite></figure>
       </div>
+      <p style="margin-top:2rem"><a class="btn btn-ghost" href="https://www.zillow.com/profile/erickanash" target="_blank" rel="noopener">Read all 17 reviews on Zillow</a></p>
     </div>
   </section>
 
@@ -521,6 +525,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
     <div class="socials">
       <a href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com/in/erickanash/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.zillow.com/profile/erickanash" target="_blank" rel="noopener">Zillow</a>
       <a href="https://www.facebook.com/erickanashsothebys/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.compass.com/agents/ericka-nash/" target="_blank" rel="noopener">Compass profile</a>
     </div>
