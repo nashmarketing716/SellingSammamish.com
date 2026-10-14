@@ -359,3 +359,14 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .h1-dash { color: #fff; -webkit-text-stroke: .035em #fff; }
 .about-photo { margin: 1.4rem 0 0; }
 .about-photo img { display: block; width: 100%; height: auto; }
+.area-more { margin-top: .25rem; }
+.area-more summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .45rem; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink); padding: .35rem 0; border-bottom: 1px solid var(--ink); }
+.area-more summary::-webkit-details-marker { display: none; }
+.area-more summary::after { content: "+"; font-size: 1rem; line-height: 1; letter-spacing: 0; }
+.area-more[open] summary::after { content: "\2013"; }
+.area-more ul { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: .75rem; }
+.area-more li { color: var(--muted); font-size: .93rem; line-height: 1.55; }
+.area-more li strong { color: var(--ink); font-weight: 600; }
+.areas { gap: 0; background: none; border: 0; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.area { border: 1px solid var(--line); margin: 0 -1px -1px 0; }
+@media (min-width: 64rem) { .areas { grid-template-columns: repeat(5, 1fr); } }
