@@ -355,3 +355,4 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .quote-feature blockquote p { margin: 0; }
 .quote-feature cite { font-style: normal; font-size: .85rem; color: var(--on-fir-muted); letter-spacing: .04em; }
 #testimonials .quotes { grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+.h1-line { display: block; }
