@@ -1,21 +1,21 @@
-/* Layout: a north-plateau estate page in the Nash palette shared with
-   refractivelensexchange.com: cool slate ground, deep navy bands, teal as the
-   one accent (mint on navy). A topographic contour field in the hero stands in
-   for the Sahalee fairways; a sales ledger is the page's proof. */
+/* Layout: a black-and-white Compass-style estate page. White ground, black
+   ink and black bands, with gray as the only secondary tone. A topographic
+   contour field in the hero stands in for the Sahalee fairways; a sales
+   ledger is the page's proof. */
 :root {
-  --fog: #f5f7f8;
-  --paper: #ffffff;
-  --ink: #0e1e2b;
-  --fir: #16293a;
-  --brass: #0b6e69;
-  --mint: #7fd3cc;
-  --muted: #4a5b64;
-  --line: #e1e6ea;
-  --contour: rgba(11, 110, 105, .14);
-  --on-fir: #eef4f6;
-  --on-fir-muted: #a9bac3;
-  --flag-bg: #e7f1f0;
-  --flag-fg: #0b5f5b;
+  --fog: #ffffff;
+  --paper: #f6f6f6;
+  --ink: #0a0a0a;
+  --fir: #0a0a0a;
+  --brass: #0a0a0a;
+  --mint: #ffffff;
+  --muted: #5c5c5c;
+  --line: #e2e2e2;
+  --contour: rgba(0, 0, 0, .09);
+  --on-fir: #ffffff;
+  --on-fir-muted: #a6a6a6;
+  --flag-bg: #efefef;
+  --flag-fg: #333333;
 
   --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
@@ -30,21 +30,21 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --fog: #0b1722; --paper: #102130; --ink: #e6eef1; --fir: #071019;
-    --brass: #7fd3cc; --mint: #7fd3cc; --muted: #a9bac3; --line: #23384a;
-    --contour: rgba(127, 211, 204, .12); --on-fir: #e6eef1; --on-fir-muted: #a9bac3;
-    --flag-bg: #123b3a; --flag-fg: #7fd3cc;
+    --fog: #0a0a0a; --paper: #161616; --ink: #f2f2f2; --fir: #000000;
+    --brass: #f2f2f2; --mint: #ffffff; --muted: #a6a6a6; --line: #2a2a2a;
+    --contour: rgba(255, 255, 255, .08); --on-fir: #ffffff; --on-fir-muted: #a6a6a6;
+    --flag-bg: #262626; --flag-fg: #dddddd;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --fog: #0b1722; --paper: #102130; --ink: #e6eef1; --fir: #071019;
-  --brass: #7fd3cc; --mint: #7fd3cc; --muted: #a9bac3; --line: #23384a;
-  --contour: rgba(127, 211, 204, .12); --on-fir: #e6eef1; --on-fir-muted: #a9bac3;
-  --flag-bg: #123b3a; --flag-fg: #7fd3cc;
+  --fog: #0a0a0a; --paper: #161616; --ink: #f2f2f2; --fir: #000000;
+  --brass: #f2f2f2; --mint: #ffffff; --muted: #a6a6a6; --line: #2a2a2a;
+  --contour: rgba(255, 255, 255, .08); --on-fir: #ffffff; --on-fir-muted: #a6a6a6;
+  --flag-bg: #262626; --flag-fg: #dddddd;
   color-scheme: dark;
 }
-/* On navy bands the accent switches to mint for contrast. */
+/* On black bands the accent switches to white. */
 .creds, .community, .listings-band { --brass: var(--mint); }
 
 * { box-sizing: border-box; }
@@ -293,3 +293,24 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .gal-card.end { flex-basis: min(16rem, 70vw); align-content: center; justify-items: start; border: 1px solid var(--navy-line, rgba(255,255,255,.18)); padding: 1.5rem; }
 .gal-card.end strong { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.2; }
 .gal-card.end span { color: var(--mint); font-weight: 600; }
+
+/* Compass-style details: utility bar, uppercase nav and buttons, CTA band */
+.topbar { background: var(--fir); color: var(--on-fir); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+.topbar .wrap { display: flex; justify-content: space-between; gap: 1rem; padding-block: .55rem; flex-wrap: wrap; }
+.topbar a { color: var(--on-fir); text-decoration: none; }
+.topbar .tb-right { display: flex; gap: 1.5rem; }
+@media (max-width: 40rem) { .topbar .tb-left { display: none; } }
+.nav { text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 600; }
+.nav .cta-link { border: 1px solid var(--ink); padding: .5rem .9rem; }
+.btn { text-transform: uppercase; letter-spacing: .14em; font-size: .76rem; padding: 1rem 1.6rem; border-radius: 0; }
+.btn-solid:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
+.listings-band .btn-solid:hover, .cta-band .btn:hover { color: var(--on-fir); border-color: var(--on-fir); }
+.eyebrow { font-family: var(--body); font-weight: 600; letter-spacing: .22em; }
+.cta-band { background: var(--fir); color: var(--on-fir); text-align: center; border-top: 1px solid var(--line); }
+.cta-band .wrap { padding-block: clamp(4rem, 9vw, 7rem); display: grid; gap: 1.5rem; justify-items: center; }
+.cta-band h2 { font-size: clamp(2.2rem, 6vw, 4rem); max-width: 16ch; }
+.cta-band p { color: var(--on-fir-muted); max-width: 34rem; }
+.cta-band .btn { background: var(--on-fir); color: var(--fir); border-color: var(--on-fir); }
+.cta-band .btn:hover { background: transparent; }
+.creds, .community, .listings-band { border-block: 1px solid var(--line); }
+.nav { align-items: center; }
