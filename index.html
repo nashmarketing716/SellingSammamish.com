@@ -206,6 +206,22 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .quote blockquote { margin: 0; font-family: var(--display); font-size: 1.3rem; line-height: 1.35; font-style: italic; }
 .quote cite { font-style: normal; font-size: .85rem; color: var(--muted); }
 
+/* Social */
+.social-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 56rem) { .social-grid { grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; } }
+.social-copy { display: grid; gap: 1rem; align-content: start; }
+.social-copy .actions { margin-top: .5rem; }
+.social-links { list-style: none; margin: .5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .92rem; }
+.social-links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); }
+.ig-feed { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.ig-feed.has-embeds { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.ig-tile { aspect-ratio: 1; max-width: 100%; background: var(--fir); color: var(--on-fir); display: flex; align-items: flex-end; padding: 1rem; text-decoration: none; position: relative; overflow: hidden; }
+.ig-tile::before { content: ""; position: absolute; inset: 0; background: repeating-radial-gradient(circle at 80% 20%, transparent 0 14px, var(--contour) 14px 15px); opacity: .9; }
+.ig-tile:nth-child(2), .ig-tile:nth-child(3) { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+.ig-tile span { position: relative; font-family: var(--display); font-size: 1.15rem; font-style: italic; }
+.ig-tile:hover span { color: var(--brass); }
+.ig-feed .instagram-media { min-width: 0 !important; max-width: 100% !important; margin: 0 !important; }
+
 /* Community */
 .community { background: var(--fir); color: var(--on-fir); }
 .community .wrap { display: grid; gap: 2rem; padding-block: clamp(3rem, 7vw, 5rem); }
@@ -458,6 +474,31 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
         <figure class="quote"><blockquote>“Ericka knows what buyers like.”</blockquote><cite>YIYEH · Sold a home in Sammamish, 2025</cite></figure>
       </div>
       <p style="margin-top:2rem"><a class="btn btn-ghost" href="https://www.zillow.com/profile/erickanash" target="_blank" rel="noopener">Read all 17 reviews on Zillow</a></p>
+    </div>
+  </section>
+
+  <section class="block social" id="social">
+    <div class="wrap social-grid">
+      <div class="social-copy">
+        <p class="eyebrow">On Instagram</p>
+        <h2>Tours, listings and life on the plateau</h2>
+        <p class="lede">Ericka posts video walkthroughs of new listings, Sahalee market updates and the best of Sammamish. Follow along for homes before they hit the market.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">Follow @ericka.nash.real.estate</a>
+        </div>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/erickanashsothebys/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.linkedin.com/in/erickanash/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.zillow.com/profile/erickanash" target="_blank" rel="noopener">Zillow reviews</a></li>
+          <li><a href="https://www.compass.com/agents/ericka-nash/" target="_blank" rel="noopener">Compass profile</a></li>
+        </ul>
+      </div>
+      <div class="ig-feed" id="ig-feed">
+        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Listing tours</span></a>
+        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Sahalee market updates</span></a>
+        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Just sold</span></a>
+        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Life in Sammamish</span></a>
+      </div>
     </div>
   </section>
 
