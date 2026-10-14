@@ -372,3 +372,13 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 @media (min-width: 64rem) { .areas { grid-template-columns: repeat(5, 1fr); } }
 .gal-tile { aspect-ratio: 1 / 1; }
 .listings-band .lede a { color: var(--on-fir); text-decoration: underline; text-underline-offset: .2em; }
+/* White fixed header with black Contact button */
+.topbar { background: #ffffff; color: #0a0a0a; border-bottom: 1px solid #e2e2e2; }
+.topbar a { color: #0a0a0a; }
+.site-head { background: #ffffff; color: #0a0a0a; border-bottom: 1px solid #e2e2e2; }
+.site-head .mark, .site-head .mark span { color: #0a0a0a; }
+.site-head .nav a { color: #5c5c5c; }
+.site-head .nav a:hover { color: #0a0a0a; }
+.site-head .nav .cta-link { background: #0a0a0a; color: #ffffff; border-color: #0a0a0a; }
+.site-head .nav .cta-link:hover { background: #ffffff; color: #0a0a0a; border-color: #0a0a0a; }
+.site-head :focus-visible, .topbar :focus-visible { outline-color: #0a0a0a; }
