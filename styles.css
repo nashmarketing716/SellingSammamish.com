@@ -330,3 +330,15 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 
 /* Bodoni draws "#" as a hairline; set it in the sans at a heavy weight */
 .hash { font-family: var(--body); font-weight: 700; font-size: .78em; vertical-align: .08em; margin-right: .04em; }
+
+/* Dark hero with Ericka's portrait */
+.hero-dark { background: var(--fir); color: var(--on-fir); --ink: var(--on-fir); --muted: var(--on-fir-muted); --brass: var(--on-fir); --contour: rgba(255,255,255,.07); --line: rgba(255,255,255,.15); border-bottom: 0; }
+.hero-dark .btn-solid { background: var(--on-fir); color: var(--fir); border-color: var(--on-fir); }
+.hero-dark .btn-solid:hover { background: transparent; color: var(--on-fir); }
+.hero-dark .btn-ghost { color: var(--on-fir); border-color: rgba(255,255,255,.4); }
+.hero-dark .btn-ghost:hover { border-color: var(--on-fir); }
+.hero-dark .wrap { align-items: center; }
+@media (min-width: 56rem) { .hero-dark .wrap { grid-template-columns: 1.05fr 1fr; } }
+.hero-photo { max-width: 34rem; margin: 0; }
+.hero-photo img { width: 100%; height: auto; display: block; }
+.hero-dark h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); }
