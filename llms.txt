@@ -13,10 +13,10 @@
 - Contact: 425-410-3865, ericka.nash@compass.com
 
 ## Pages
-- [Home: Sammamish real estate](https://www.sellingsammamish.com/)
-- [Sahalee Estates homes and market](https://www.sellingsammamish.com/sahalee-estates/)
-- [Timberline neighborhood guide](https://www.sellingsammamish.com/timberline/)
-- [Heritage Hills neighborhood guide](https://www.sellingsammamish.com/heritage-hills/)
+- [Home: Sammamish real estate](https://sellingsammamish.com/)
+- [Sahalee Estates homes and market](https://sellingsammamish.com/sahalee-estates/)
+- [Timberline neighborhood guide](https://sellingsammamish.com/timberline/)
+- [Heritage Hills neighborhood guide](https://sellingsammamish.com/heritage-hills/)
 
 ## Profiles
 - [Compass](https://www.compass.com/agents/ericka-nash/)

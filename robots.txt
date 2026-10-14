@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sellingsammamish.com/sitemap.xml
+Sitemap: https://sellingsammamish.com/sitemap.xml
