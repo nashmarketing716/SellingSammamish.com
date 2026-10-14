@@ -342,3 +342,8 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-photo { max-width: 34rem; margin: 0; }
 .hero-photo img { width: 100%; height: auto; display: block; }
 .hero-dark h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); }
+
+/* Reusable black band: flips the tokens so everything inside reads white */
+.band-dark { background: var(--fir); color: var(--on-fir); --ink: var(--on-fir); --muted: var(--on-fir-muted); --brass: var(--on-fir); --line: rgba(255,255,255,.15); border-top: 0 !important; }
+.band-dark .about-copy p { color: var(--on-fir-muted); }
+.band-dark .about-copy p:first-child { color: var(--on-fir); }
