@@ -387,3 +387,12 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 @media (min-width: 56rem) { .social-grid { grid-template-columns: 1fr; gap: 2.5rem; align-items: start; } }
 .social-copy { max-width: 46rem; }
 @media (min-width: 56rem) { .ig-feed.has-embeds { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Featured video tour under the listings strip */
+.tour { display: grid; gap: 2rem; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,.15); align-items: center; }
+@media (min-width: 56rem) { .tour { grid-template-columns: auto 1fr; gap: 4rem; } }
+.tour-video video { display: block; width: 100%; max-width: 22rem; height: auto; aspect-ratio: 9 / 16; background: #000; margin-inline: auto; }
+@media (min-width: 56rem) { .tour-video video { width: auto; height: min(80vh, 40rem); max-width: none; } }
+.tour-copy { display: grid; gap: 1rem; justify-items: start; max-width: 32rem; }
+.tour-copy h3 { font-family: var(--display); font-weight: 400; font-size: var(--step-2, 2rem); line-height: 1.15; margin: 0; color: var(--on-fir); }
+.tour-copy .btn-solid { background: #ffffff; color: #0a0a0a; border: 1px solid #ffffff; }
+.tour-copy .btn-solid:hover { background: transparent; color: #ffffff; }
