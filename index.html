@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ericka Nash Real Estate</title>
+<meta name="description" content="Ericka Nash, Compass broker in Sammamish and the Eastside. #1 Realtor in Sahalee Estates and a neighborhood expert in Timberline and Heritage Hills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a fairway-green estate page. Fog ground, fir ink, brass for the one
+   accent. A topographic contour field in the hero stands in for the Sahalee
+   fairways; a sales ledger is the page's proof. */
+:root {
+  --fog: #eef0eb;
+  --paper: #f8f9f6;
+  --ink: #16211d;
+  --fir: #1f3a33;
+  --brass: #94722f;
+  --muted: #56645e;
+  --line: #d3d9d1;
+  --contour: rgba(31, 58, 51, .16);
+  --on-fir: #eef0eb;
+  --on-fir-muted: #b7c4bd;
+  --flag-bg: #f3e6c8;
+  --flag-fg: #6b5120;
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4vw, 2.75rem);
+  --step-4: clamp(2.6rem, 7vw, 5rem);
+  --wrap: 72rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fog: #111814; --paper: #172019; --ink: #e5eae3; --fir: #0c1411;
+    --brass: #cfaa62; --muted: #9caaa2; --line: #2b3832;
+    --contour: rgba(207, 170, 98, .13); --on-fir: #e5eae3; --on-fir-muted: #9caaa2;
+    --flag-bg: #3a2f17; --flag-fg: #e9cf96;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fog: #111814; --paper: #172019; --ink: #e5eae3; --fir: #0c1411;
+  --brass: #cfaa62; --muted: #9caaa2; --line: #2b3832;
+  --contour: rgba(207, 170, 98, .13); --on-fir: #e5eae3; --on-fir-muted: #9caaa2;
+  --flag-bg: #3a2f17; --flag-fg: #e9cf96;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  background: var(--fog); color: var(--ink);
+  font-family: var(--body); font-size: var(--step-0); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+.wrap {
+  max-width: var(--wrap); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 48rem) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-1); font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-family: var(--mono); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
+.lede { color: var(--muted); max-width: 36rem; }
+
+.flag {
+  display: inline-block; font-family: var(--mono); font-size: .68rem; letter-spacing: .06em;
+  text-transform: uppercase; background: var(--flag-bg); color: var(--flag-fg);
+  padding: .15rem .45rem; border-radius: 3px; vertical-align: middle; white-space: nowrap;
+}
+
+/* Header */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--fog) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .85rem; }
+.mark { font-family: var(--display); font-size: 1.35rem; text-decoration: none; letter-spacing: .02em; }
+.mark span { color: var(--brass); font-style: italic; }
+.nav { display: flex; gap: 1.5rem; font-size: .88rem; font-weight: 500; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--ink); }
+.nav .cta-link { color: var(--ink); border-bottom: 1px solid var(--brass); }
+@media (max-width: 46rem) { .nav a:not(.cta-link) { display: none; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+#topo { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero .wrap { position: relative; display: grid; gap: 2.5rem; padding-block: clamp(3rem, 8vw, 6rem); grid-template-columns: 1fr; align-items: end; }
+@media (min-width: 56rem) { .hero .wrap { grid-template-columns: 1.35fr 1fr; } }
+.hero h1 { font-size: var(--step-4); margin-block: 1rem 1.5rem; }
+.hero h1 em { color: var(--brass); }
+.hero .lede { font-size: 1.08rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; font: 600 .92rem var(--body); padding: .85rem 1.4rem; border-radius: 2px; text-decoration: none; border: 1px solid var(--fir); cursor: pointer; }
+.btn-solid { background: var(--fir); color: var(--on-fir); }
+.btn-solid:hover { background: var(--brass); border-color: var(--brass); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
+
+.portrait { position: relative; max-width: 24rem; width: 100%; justify-self: center; }
+.portrait-frame {
+  aspect-ratio: 4 / 5; max-width: 100%; background: var(--fir); color: var(--on-fir);
+  display: grid; place-items: center; position: relative; overflow: hidden;
+}
+.portrait-frame .initials { font-family: var(--display); font-size: clamp(4rem, 12vw, 7rem); font-style: italic; color: var(--brass); }
+.portrait-frame .flag { position: absolute; top: 1rem; left: 1rem; }
+.portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: .75rem; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+
+/* Credentials band */
+.creds { background: var(--fir); color: var(--on-fir); }
+.creds .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0; padding-block: 0; }
+.cred { padding: 2rem 1.25rem 2rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+@media (min-width: 56rem) { .cred { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.1); padding-left: 1.5rem; } .cred:first-child { padding-left: 0; } .cred:last-child { border-right: 0; } }
+.cred .num { font-family: var(--display); font-size: 2.4rem; line-height: 1; color: var(--brass); font-variant-numeric: lining-nums tabular-nums; }
+.cred .what { margin-top: .6rem; font-size: .9rem; color: var(--on-fir-muted); line-height: 1.45; }
+
+/* Sections */
+section.block { padding-block: clamp(3.5rem, 8vw, 6rem); }
+section.block + section.block { border-top: 1px solid var(--line); }
+.head-row { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+@media (min-width: 56rem) { .head-row { grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; } }
+
+.about { display: grid; gap: 2.5rem; }
+@media (min-width: 56rem) { .about { grid-template-columns: 1fr 1.2fr; gap: 4rem; } }
+.about-copy { display: grid; gap: 1.1rem; max-width: 38rem; }
+.about-copy p:first-child { font-family: var(--display); font-size: var(--step-2); line-height: 1.25; }
+.facts { display: grid; gap: 0; align-content: start; border-top: 1px solid var(--ink); }
+.fact { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding-block: .9rem; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.fact dt { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding-top: .2rem; }
+.fact dd { margin: 0; min-width: 0; }
+@media (max-width: 30rem) { .fact { grid-template-columns: 1fr; gap: .2rem; } }
+
+/* Sahalee feature */
+.sahalee { background: var(--paper); }
+.sahalee-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 56rem) { .sahalee-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; } }
+.sahalee h2 em { color: var(--brass); }
+.sahalee-copy { display: grid; gap: 1rem; }
+.scorecard { border: 1px solid var(--line); background: var(--fog); }
+.scorecard table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.scorecard caption { text-align: left; padding: 1rem 1.25rem; font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); border-bottom: 1px solid var(--line); }
+.scorecard th, .scorecard td { padding: .8rem 1.25rem; text-align: left; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.scorecard th { font-weight: 500; color: var(--muted); }
+.scorecard td { text-align: right; font-family: var(--mono); }
+.scorecard tr:last-child th, .scorecard tr:last-child td { border-bottom: 0; }
+
+.sahalee > .wrap + .wrap { margin-top: 3rem; }
+.hoods { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.hood { background: var(--fog); padding: 1.5rem; display: grid; gap: .6rem; align-content: start; }
+.hood .zip { font-family: var(--mono); font-size: .72rem; color: var(--brass); letter-spacing: .08em; }
+.hood p { color: var(--muted); font-size: .93rem; }
+.hood-tag { justify-self: start; font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; border: 1px solid var(--brass); color: var(--brass); padding: .15rem .5rem; border-radius: 2px; }
+.hood-note { margin-top: 1rem; font-size: .85rem; color: var(--muted); }
+
+/* Ledger */
+.ledger-tools { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+.chip { font: 500 .85rem var(--body); padding: .45rem .9rem; border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 999px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--fog); border-color: var(--ink); }
+.ledger-scroll { overflow-x: auto; border-top: 1px solid var(--ink); }
+.ledger { width: 100%; border-collapse: collapse; min-width: 40rem; font-variant-numeric: tabular-nums; }
+.ledger th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: .8rem .75rem .8rem 0; border-bottom: 1px solid var(--line); }
+.ledger td { padding: .85rem .75rem .85rem 0; border-bottom: 1px solid var(--line); font-size: .93rem; vertical-align: baseline; }
+.ledger td.addr { font-weight: 600; }
+.ledger td.num, .ledger th.num { text-align: right; font-family: var(--mono); }
+.ledger td.price { text-align: right; font-family: var(--display); font-size: 1.1rem; padding-right: 0; }
+.ledger th.price { text-align: right; padding-right: 0; }
+.ledger tr:hover td { background: var(--paper); }
+.status { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; padding: .1rem .4rem; border: 1px solid currentColor; border-radius: 2px; }
+.status.active { color: var(--brass); }
+.status.pending { color: var(--muted); }
+.status.sold { color: var(--ink); }
+.ledger-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: .85rem; color: var(--muted); }
+.ledger-foot strong { font-family: var(--mono); color: var(--ink); font-weight: 500; }
+
+/* Areas */
+.areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.area { background: var(--fog); padding: 1.5rem; display: grid; gap: .5rem; align-content: start; }
+.area .zip { font-family: var(--mono); font-size: .72rem; color: var(--brass); letter-spacing: .08em; }
+.area p { color: var(--muted); font-size: .93rem; }
+
+/* Services */
+.services { display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.service { display: grid; gap: .75rem; align-content: start; }
+.service .who { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--brass); }
+.service ul { margin: .25rem 0 0; padding: 0; list-style: none; display: grid; gap: .45rem; }
+.service li { padding-left: 1.1rem; position: relative; color: var(--muted); font-size: .95rem; }
+.service li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: 1px; background: var(--brass); }
+
+/* Testimonials */
+.quotes { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.quote { display: grid; gap: 1rem; align-content: start; }
+.quote blockquote { margin: 0; font-family: var(--display); font-size: 1.3rem; line-height: 1.35; font-style: italic; }
+.quote cite { font-style: normal; font-size: .85rem; color: var(--muted); }
+
+/* Community */
+.community { background: var(--fir); color: var(--on-fir); }
+.community .wrap { display: grid; gap: 2rem; padding-block: clamp(3rem, 7vw, 5rem); }
+@media (min-width: 56rem) { .community .wrap { grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; } }
+.community .lede { color: var(--on-fir-muted); }
+.sponsor-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,.15); }
+.sponsor-list li { display: flex; justify-content: space-between; gap: 1rem; padding-block: .9rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+.sponsor-list span:last-child { font-family: var(--mono); font-size: .75rem; color: var(--on-fir-muted); text-align: right; }
+
+/* Contact */
+.contact-grid { display: grid; gap: 3rem; }
+@media (min-width: 56rem) { .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 4rem; } }
+.reach { display: grid; gap: 1.5rem; align-content: start; }
+.reach-item { display: grid; gap: .25rem; }
+.reach-item .label { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+.reach-item .value { font-family: var(--display); font-size: 1.5rem; user-select: all; overflow-wrap: anywhere; }
+form { display: grid; gap: 1rem; }
+.row2 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+label { display: grid; gap: .35rem; font-size: .82rem; font-weight: 600; }
+input, select, textarea {
+  font: 400 1rem var(--body); color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 2px; padding: .75rem .85rem; width: 100%;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brass); }
+textarea { min-height: 7rem; resize: vertical; }
+.form-note { font-size: .85rem; color: var(--muted); }
+.form-note[data-state="sent"] { color: var(--brass); }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { display: grid; gap: 1rem; padding-block: 2.5rem; font-size: .8rem; color: var(--muted); }
+@media (min-width: 56rem) { footer .wrap { grid-template-columns: 1fr 1fr; } }
+footer .socials { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="#top">Ericka <span>Nash</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#neighborhoods">Neighborhoods</a>
+      <a href="#sales">Sales</a>
+      <a href="#services">Services</a>
+      <a class="cta-link" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <canvas id="topo" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Compass Broker · Sammamish &amp; the Eastside</p>
+        <h1>The Eastside's luxury and <em>country club</em> specialist.</h1>
+        <p class="lede">Ericka Nash is the #1 Realtor in Sahalee Estates, with more than $85 million sold in that community alone, and the neighborhood expert next door in Timberline and Heritage Hills. She has been named to the RealTrends Thousand every year since 2019 and ranks in the top 1.5% of agents nationwide.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#contact">Plan your sale</a>
+          <a class="btn btn-ghost" href="#sales">See recent sales</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <span class="flag">Headshot needed</span>
+          <span class="initials" aria-hidden="true">EN</span>
+        </div>
+        <figcaption><span>Ericka Nash, Broker</span><span>Sammamish, WA</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="creds" aria-label="Recognition">
+    <div class="wrap">
+      <div class="cred"><div class="num">#1</div><div class="what">Realtor in Sahalee Estates, top producer there every year from 2020 to 2025</div></div>
+      <div class="cred"><div class="num">$85M+</div><div class="what">Sold in Sahalee Estates</div></div>
+      <div class="cred"><div class="num">Top 1.5%</div><div class="what">Of agents nationwide, per RealTrends</div></div>
+      <div class="cred"><div class="num">7 yrs</div><div class="what">RealTrends “The Thousand,” 2019 to 2025</div></div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="about-copy">
+        <p>A Pacific Northwest native who knows the Eastside street by street, and fairway by fairway.</p>
+        <p>Ericka grew up in the Northwest and studied Communications and Human Rights at the University of Washington. Before real estate she worked in interior design, and that eye shows in how she prepares a home: the staging, the photography and the story buyers see first.</p>
+        <p>Her practice centers on luxury homes and golf and country club estates across Sammamish, Redmond, Bellevue and Issaquah. She is a top Realtor at Compass, which she describes as the #1 producing brokerage in Washington State. <span class="flag">Confirm wording</span></p>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Brokerage</dt><dd>Compass</dd></div>
+        <div class="fact"><dt>Focus</dt><dd>Luxury lifestyle homes, golf &amp; country club estates</dd></div>
+        <div class="fact"><dt>Home base</dt><dd>Sammamish · Sahalee Country Club</dd></div>
+        <div class="fact"><dt>Education</dt><dd>University of Washington, BA Communications, minor in Human Rights</dd></div>
+        <div class="fact"><dt>Before real estate</dt><dd>Interior design</dd></div>
+        <div class="fact"><dt>Represents</dt><dd>Sellers, buyers, and families relocating to the Eastside</dd></div>
+        <div class="fact"><dt>Years licensed</dt><dd><span class="flag">Add year</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block sahalee" id="neighborhoods">
+    <span id="sahalee"></span>
+    <div class="wrap sahalee-grid">
+      <div class="sahalee-copy">
+        <p class="eyebrow">Sahalee Estates</p>
+        <h2>Sahalee is her <em>home course.</em></h2>
+        <p class="lede">Sahalee Country Club has hosted the PGA Championship, the U.S. Senior Open and the Women's PGA Championship. The homes around its 27 holes rarely come to market. When they do, sellers call Ericka more than anyone else.</p>
+        <p class="lede">She knows which lots back onto which holes, how membership transfers work, and which buyers are already waiting for a Sahalee address.</p>
+      </div>
+      <div class="scorecard">
+        <table>
+          <caption>Ericka's Sahalee record</caption>
+          <tbody>
+            <tr><th scope="row">Rank among Sahalee Realtors</th><td>#1</td></tr>
+            <tr><th scope="row">Volume sold in Sahalee</th><td>$85M+</td></tr>
+            <tr><th scope="row">Top Producing Sahalee Realtor</th><td>2020–2025</td></tr>
+            <tr><th scope="row">Rank in Sammamish by volume</th><td>#5 <span class="flag">RealTrends</span></td></tr>
+            <tr><th scope="row">Rank in Washington by volume</th><td>#353 <span class="flag">Confirm</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hoods">
+        <div class="hood">
+          <span class="zip">Sammamish · 98074</span>
+          <h3>Sahalee Estates</h3>
+          <p>Estate homes on and around the 27 holes of Sahalee Country Club, between Inglewood Hill and the north end of Lake Sammamish.</p>
+          <span class="hood-tag">#1 Realtor · $85M+ sold</span>
+        </div>
+        <div class="hood">
+          <span class="zip">Sammamish · 98074</span>
+          <h3>Timberline</h3>
+          <p>A wooded north-plateau community of larger lots and quiet cul-de-sacs, close to Eastlake schools and an easy drive to Redmond.</p>
+          <span class="hood-tag">Neighborhood expert</span>
+        </div>
+        <div class="hood">
+          <span class="zip">Sammamish · 98074</span>
+          <h3>Heritage Hills</h3>
+          <p>Established homes just east of Sahalee, with mature trees and neighborhood streets that put the club, the schools and Pine Lake close by.</p>
+          <span class="hood-tag">Neighborhood expert</span>
+        </div>
+      </div>
+      <p class="hood-note"><span class="flag">Confirm</span> Ericka, please check the Timberline and Heritage Hills descriptions and add any sales figures you want shown.</p>
+    </div>
+  </section>
+
+  <section class="block" id="sales">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">Sales ledger</p>
+          <h2>Recent sales and listings</h2>
+        </div>
+        <p class="lede">Twenty Eastside homes from Ericka's Compass record. Filter by city to see where she works most.</p>
+      </div>
+      <div class="ledger-tools" role="group" aria-label="Filter by city" id="filters"></div>
+      <div class="ledger-scroll">
+        <table class="ledger">
+          <thead>
+            <tr><th>Address</th><th>City</th><th>Status</th><th class="num">Bd / Ba</th><th class="num">Sq ft</th><th class="num">Acres</th><th class="price">Price</th></tr>
+          </thead>
+          <tbody id="ledger-body"></tbody>
+        </table>
+      </div>
+      <div class="ledger-foot">
+        <span>Showing <strong id="ledger-count">0</strong> homes · total <strong id="ledger-total">$0</strong></span>
+        <span>Source: Ericka's Compass agent profile. Sold prices as listed there.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="areas">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">Where she works</p>
+          <h2>Eastside neighborhoods</h2>
+        </div>
+        <p class="lede">Most of Ericka's business is on the Sammamish plateau, with steady sales across the communities around it.</p>
+      </div>
+      <div class="areas">
+        <div class="area"><span class="zip">98074 · 98075</span><h3>Sammamish</h3><p>Sahalee Estates, Timberline, Heritage Hills and the Eastlake school neighborhoods. Her core market.</p></div>
+        <div class="area"><span class="zip">98053</span><h3>Redmond</h3><p>Acreage estates on Union Hill and Novelty Hill, including her highest recorded sale.</p></div>
+        <div class="area"><span class="zip">98008</span><h3>Bellevue</h3><p>Lake Hills and Crossroads homes close to downtown Bellevue and the tech campuses.</p></div>
+        <div class="area"><span class="zip">98027</span><h3>Issaquah</h3><p>Wooded multi-acre properties between Cougar Mountain and the Issaquah Alps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">How she works</p>
+          <h2>Selling, buying and moving to the Eastside</h2>
+        </div>
+      </div>
+      <div class="services">
+        <div class="service">
+          <span class="who">For sellers</span>
+          <h3>A designer's launch</h3>
+          <p class="lede">Ericka's interior design background shapes every listing, from the first walkthrough to the photography.</p>
+          <ul>
+            <li>Staging and pre-listing improvements through Compass Concierge, paid at closing</li>
+            <li>Pricing built on Sahalee and Sammamish comparable sales</li>
+            <li>Private exclusive and Coming Soon options before going public</li>
+          </ul>
+        </div>
+        <div class="service">
+          <span class="who">For buyers</span>
+          <h3>Access before the market</h3>
+          <p class="lede">The best club-community homes often trade quietly. Ericka hears about them early.</p>
+          <ul>
+            <li>Off-market and pre-market opportunities in Sahalee, Timberline and Heritage Hills</li>
+            <li>Lot, view and course-frontage guidance</li>
+            <li>Negotiation in multiple-offer situations</li>
+          </ul>
+        </div>
+        <div class="service">
+          <span class="who">For relocation</span>
+          <h3>Moving to the Eastside</h3>
+          <p class="lede">For families arriving for Microsoft, Amazon and the rest of the Eastside's employers.</p>
+          <ul>
+            <li>Neighborhood and school district tours</li>
+            <li>Club membership and community introductions</li>
+            <li>A trusted vendor list for every step of the move</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="testimonials">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">Client words <span class="flag">Sample text, replace with real reviews</span></p>
+          <h2>What clients say</h2>
+        </div>
+      </div>
+      <div class="quotes">
+        <figure class="quote"><blockquote>“Ericka staged our home like a magazine spread and had multiple offers in the first weekend.”</blockquote><cite>Seller, Sahalee Estates</cite></figure>
+        <figure class="quote"><blockquote>“She knew the house we wanted was coming before it ever hit the market.”</blockquote><cite>Buyer, Sammamish</cite></figure>
+        <figure class="quote"><blockquote>“We moved from out of state and she made the Eastside feel like home in one visit.”</blockquote><cite>Relocating family, Redmond</cite></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="community" aria-labelledby="community-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">In the community</p>
+        <h2 id="community-h">Invested in the Eastside</h2>
+        <p class="lede" style="margin-top:1rem">Ericka was a Big Sister for eleven years with Big Brothers Big Sisters of King County, and sponsors youth sports on the plateau.</p>
+      </div>
+      <ul class="sponsor-list">
+        <li><span>Big Brothers Big Sisters of King County</span><span>Big Sister, 11 years</span></li>
+        <li><span>Eastlake Little League</span><span>Sponsor</span></li>
+        <li><span>Eastlake Lady Wolves Fastpitch</span><span>Sponsor</span></li>
+        <li><span>Eastlake Baseball</span><span>Sponsor</span></li>
+        <li><span>Washington Junior Golf Association</span><span>Sponsor</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reach">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Thinking about a move?</h2>
+          <p class="lede" style="margin-top:1rem">Start with a conversation about what your home is worth in today's Eastside market.</p>
+        </div>
+        <div class="reach-item"><span class="label">Phone</span><span class="value">425-410-3865</span></div>
+        <div class="reach-item"><span class="label">Email</span><span class="value">ericka.nash@compass.com</span></div>
+        <div class="reach-item"><span class="label">Office</span><span class="value" style="font-size:1.1rem">Compass, Eastside office <span class="flag">Add address</span></span></div>
+      </div>
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label for="f-bot">Leave blank<input id="f-bot" name="bot-field"></label></p>
+        <div class="row2">
+          <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
+          <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <div class="row2">
+          <label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+          <label for="f-interest">I'm interested in
+            <select id="f-interest" name="interest">
+              <option>Selling my home</option>
+              <option>Buying a home</option>
+              <option>Relocating to the Eastside</option>
+              <option>A home valuation</option>
+            </select>
+          </label>
+        </div>
+        <label for="f-msg">Message<textarea id="f-msg" name="message" placeholder="Neighborhood, timing, anything Ericka should know"></textarea></label>
+        <div><button class="btn btn-solid" type="submit">Send to Ericka</button></div>
+        <p class="form-note" id="form-note">Ericka usually replies within one business day.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>Ericka Nash, Broker · Compass · Sammamish, Washington</p>
+      <p>Compass is a licensed real estate broker in Washington. Equal Housing Opportunity. <span class="flag">Add license # and Compass disclaimer</span></p>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/erickanash/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/erickanashsothebys/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.compass.com/agents/ericka-nash/" target="_blank" rel="noopener">Compass profile</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const homes = [
+  ["3212 211th Ave NE","Sammamish","pending",5,4,3570,0.23,1790000],
+  ["21845 NE 30th Pl","Sammamish","active",6,4,4470,0.27,1725000],
+  ["7240 252nd Ave NE","Redmond","sold",5,5,6003,3.05,3995000],
+  ["16724 SE 28th St","Bellevue","sold",5,5,4638,0.25,3810000],
+  ["2457 204th Ter NE","Sammamish","sold",5,4,4730,0.27,3795000],
+  ["2025 208th Pl NE","Sammamish","sold",5,5,4805,0.29,3480000],
+  ["923 168th Ave NE","Bellevue","sold",5,5,4095,0.18,2900000],
+  ["21713 NE 29th St","Sammamish","sold",3,3,3834,0.28,2830000],
+  ["19514 SE 16th St","Sammamish","sold",5,4,4180,0.92,2688000],
+  ["3049 205th Ct NE","Sammamish","sold",4,4,4306,0.31,2659000],
+  ["21815 NE 29th St","Sammamish","sold",5,4,3850,0.33,2595000],
+  ["20519 NE 24th Pl","Sammamish","sold",5,4,5240,0.28,2350000],
+  ["2520 Sahalee Dr W","Sammamish","sold",4,3,2910,0.28,2275000],
+  ["2057 213th Ave NE","Sammamish","sold",4,4,3360,0.32,2260000],
+  ["5800 187th Ave SE","Issaquah","sold",5,3,4433,3.56,2231000],
+  ["2315 216th Pl NE","Sammamish","sold",4,3,3210,0.28,2220000],
+  ["2309 Sahalee Dr E","Sammamish","sold",3,3,3500,0.22,2200000],
+  ["213 259th Ave NE","Sammamish","sold",5,5,4200,0.20,2185000],
+  ["20512 NE 27th Pl","Sammamish","sold",3,4,3230,0.18,2120000],
+  ["3054 205th Ct NE","Sammamish","sold",4,4,3940,0.24,2075000]
+];
+const usd = n => "$" + n.toLocaleString("en-US");
+const short = n => n >= 1e6 ? "$" + (n / 1e6).toFixed(1) + "M" : usd(n);
+const body = document.getElementById("ledger-body");
+const filters = document.getElementById("filters");
+const cities = ["All", ...new Set(homes.map(h => h[1]))];
+let current = "All";
+
+function render() {
+  const rows = homes.filter(h => current === "All" || h[1] === current);
+  body.innerHTML = rows.map(([a, c, s, bd, ba, sf, ac, p]) =>
+    `<tr><td class="addr">${a}</td><td>${c}</td><td><span class="status ${s}">${s}</span></td>` +
+    `<td class="num">${bd} / ${ba}</td><td class="num">${sf.toLocaleString("en-US")}</td>` +
+    `<td class="num">${ac.toFixed(2)}</td><td class="price">${usd(p)}</td></tr>`).join("");
+  document.getElementById("ledger-count").textContent = rows.length;
+  document.getElementById("ledger-total").textContent = short(rows.reduce((t, h) => t + h[7], 0));
+  filters.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.city === current));
+}
+cities.forEach(c => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.dataset.city = c; b.id = "chip-" + c.toLowerCase();
+  b.textContent = c === "All" ? "All cities" : c;
+  b.addEventListener("click", () => { current = c; render(); });
+  filters.appendChild(b);
+});
+render();
+
+document.getElementById("contact-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const note = document.getElementById("form-note");
+  const f = e.target;
+  if (!f.name.value.trim() || !f.email.value.includes("@")) {
+    note.removeAttribute("data-state");
+    note.textContent = "Add your name and a valid email so Ericka can reply.";
+    return;
+  }
+  try {
+    const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() });
+    if (!res.ok) throw new Error(res.status);
+    note.dataset.state = "sent";
+    note.textContent = "Thanks, " + f.name.value.trim().split(" ")[0] + ". Your message is on its way to Ericka.";
+    f.reset();
+  } catch (err) {
+    note.removeAttribute("data-state");
+    note.textContent = "That didn't go through. Please call or email Ericka directly at 425-410-3865.";
+  }
+});
+
+/* Topographic contours: concentric, noise-warped rings like a course survey. */
+(function topo() {
+  const cv = document.getElementById("topo");
+  const ctx = cv.getContext("2d");
+  function draw() {
+    const r = cv.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = r.width * dpr; cv.height = r.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, r.width, r.height);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--contour").trim();
+    ctx.lineWidth = 1;
+    const centers = [[r.width * 0.82, r.height * 0.28, 1.0], [r.width * 0.15, r.height * 1.05, 0.7]];
+    centers.forEach(([cx, cy, k], ci) => {
+      for (let ring = 1; ring < 26; ring++) {
+        const base = ring * 26 * k;
+        ctx.beginPath();
+        for (let i = 0; i <= 160; i++) {
+          const t = (i / 160) * Math.PI * 2;
+          const wob = 1 + 0.12 * Math.sin(3 * t + ring * 0.35 + ci) + 0.07 * Math.sin(5 * t - ring * 0.2) + 0.04 * Math.cos(9 * t + ring * 0.5);
+          const x = cx + Math.cos(t) * base * wob * 1.25;
+          const y = cy + Math.sin(t) * base * wob * 0.8;
+          i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        ctx.stroke();
+      }
+    });
+  }
+  draw();
+  window.addEventListener("resize", draw);
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
+</script>
+
+</body>
+</html>
