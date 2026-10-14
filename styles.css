@@ -357,3 +357,5 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 #testimonials .quotes { grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
 .h1-line { display: block; }
 .h1-dash { color: #fff; -webkit-text-stroke: .035em #fff; }
+.about-photo { margin: 1.4rem 0 0; }
+.about-photo img { display: block; width: 100%; height: auto; }
