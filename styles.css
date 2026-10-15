@@ -17,7 +17,7 @@
   --flag-bg: #efefef;
   --flag-fg: #333333;
 
-  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --display: "Cardo", Georgia, serif;
   --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
@@ -592,7 +592,5 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-reel h1 { line-height: 1.05; font-size: clamp(3rem, 8vw, 5.5rem); }
 .hero-reel h1 .amp { font-size: .7em; margin: .1em 0; }
 
-/* Easier-to-read Bodoni: a little bolder, with thicker hairlines, commas and numbers */
-/* Large sizes only: Bodoni's automatic optical size makes hairlines very thin there */
-h1, h2, .cred .num, .about-copy p:first-child, .portrait-frame .initials, .quote-feature blockquote, .tour-copy h3, .feat-copy h3 { font-variation-settings: "opsz" 28; }
-h1, h2, .mark, .portrait-frame .initials, .cred .num, .about-copy p:first-child, .ledger td.price, .quote blockquote, .ig-tile span, .reach-item .value, .faq-item summary, .aside-card .value, .quote-feature blockquote, .tour-copy h3, .feat-copy h3 { font-weight: 500; }
+/* Headline font: Cardo, the closest free match to the fosterrealty.com headlines */
+h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
