@@ -412,3 +412,8 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 @media (min-width: 56rem) { .mark-logo img { height: 3rem; } }
 .contact-logo { display: block; width: 12rem; height: auto; margin-bottom: .5rem; }
 .foot-logo { display: block; width: 9rem; height: auto; }
+
+/* Video tour: title and paragraph above the video, button below */
+.tour { grid-template-columns: 1fr; gap: 1.5rem; align-items: start; }
+@media (min-width: 56rem) { .tour { grid-template-columns: 1fr; gap: 2rem; } }
+.tour-video video { margin-inline: 0; }
