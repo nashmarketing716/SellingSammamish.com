@@ -536,3 +536,16 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 @media (min-width: 56rem) {
   .feat-slide { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
 }
+
+/* Video tours on white */
+.tours-light { background: #fff; color: #0a0a0a; }
+.tours-light .eyebrow { color: #0a0a0a; }
+.tours-light .tour { margin-top: 0; padding-top: 0; border-top: 0; }
+.tours-light .tour-copy h3 { color: #0a0a0a; }
+.tours-light .tour-copy p { color: #3a3a3a; }
+.tours-light .tour-copy .tour-facts { color: #0a0a0a; opacity: .75; }
+.tours-light .tour-copy .btn-solid { background: #0a0a0a; color: #fff; border: 1px solid #0a0a0a; }
+.tours-light .tour-copy .btn-solid:hover { background: #fff; color: #0a0a0a; }
+.tours-light .tour-arrow { border-color: #0a0a0a; color: #0a0a0a; }
+.tours-light .tour-dot { background: rgba(10,10,10,.25); }
+.tours-light .tour-dot[aria-current="true"] { background: #0a0a0a; }
