@@ -219,7 +219,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#neighborhoods">Neighborhoods</a>
-      <a href="#sales">Sales</a>
+      <a href="#listings">Sales</a>
       <a href="#testimonials">Reviews</a>
       <a href="#services">Services</a>
       <a class="cta-link" href="#contact">Contact</a>
@@ -228,7 +228,7 @@
   <nav class="menu-panel" id="menu-panel" aria-label="Menu" hidden>
     <a href="#about">About</a>
     <a href="#neighborhoods">Neighborhoods</a>
-    <a href="#sales">Sales</a>
+    <a href="#listings">Sales</a>
     <a href="#testimonials">Reviews</a>
     <a href="#services">Services</a>
   </nav>
@@ -246,7 +246,7 @@
         <p class="lede">Ericka consistently ranks among the top individual agents in Washington by sales volume and top 1.5% nationwide.</p>
         <div class="actions">
           <a class="btn btn-solid" href="#contact">Plan your sale</a>
-          <a class="btn btn-ghost" href="#sales">See recent sales</a>
+          <a class="btn btn-ghost" href="#listings">See recent sales</a>
         </div>
       </div>
       <figure class="portrait hero-photo">
@@ -561,7 +561,7 @@
     </div>
   </section>
 
-  <section class="block" id="sales">
+  <section class="block" id="sales" hidden>
     <div class="wrap">
       <div class="head-row">
         <div>
@@ -1030,6 +1030,18 @@ document.getElementById("contact-form").addEventListener("submit", async e => {
   dlg.querySelector(".ig-modal-close").addEventListener("click", close);
   dlg.addEventListener("click", e => { if (e.target === dlg) close(); });
   dlg.addEventListener("close", () => { media.innerHTML = ""; });
+})();
+
+/* Sales ledger: hidden until "View all" (or a #sales link) opens it */
+(() => {
+  const sec = document.getElementById("sales");
+  if (!sec) return;
+  const open = () => { sec.hidden = false; };
+  if (location.hash === "#sales") { open(); requestAnimationFrame(() => sec.scrollIntoView()); }
+  document.querySelectorAll('a[href="#sales"]').forEach(a => a.addEventListener("click", e => {
+    e.preventDefault(); open(); sec.scrollIntoView({ behavior: "smooth" }); history.replaceState(null, "", "#sales");
+  }));
+  addEventListener("hashchange", () => { if (location.hash === "#sales") { open(); sec.scrollIntoView(); } });
 })();
 
 /* Featured listings carousel */
