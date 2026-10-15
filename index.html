@@ -235,22 +235,29 @@
 </header>
 
 <main id="top">
+  <section class="hero-reel" aria-label="Ericka Nash Real Estate">
+    <video class="hero-reel-video" muted loop playsinline preload="none" aria-hidden="true" data-portrait="/video/hero-reel-portrait.mp4" data-landscape="/video/hero-reel-landscape.mp4" data-poster-portrait="/images/hero-reel-portrait.jpg" data-poster-landscape="/images/hero-reel-landscape.jpg"></video>
+    <div class="hero-reel-copy">
+      <p class="eyebrow">Compass Broker · Sammamish, WA 98074</p>
+      <h1>Sammamish &amp; Eastside Real Estate Expert</h1>
+      <p class="hero-reel-sub">#1 Realtor in Sahalee Estates</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#contact">Plan your sale</a>
+        <a class="btn btn-ghost" href="#listings">See recent sales</a>
+      </div>
+    </div>
+  </section>
+
   <section class="hero hero-dark">
     <canvas id="topo" aria-hidden="true"></canvas>
     <div class="wrap">
       <div>
-        <p class="eyebrow">Compass Broker · Sammamish, WA 98074</p>
-        <h1>Sammamish &amp; Eastside Real Estate Expert</h1>
         <p class="lede">Ericka Nash helps families sell their homes in Sammamish and across the greater Eastside, with personal attention, thoughtful guidance, and a deep understanding of what makes each property and neighborhood special.</p>
         <p class="lede">As the #1 Realtor in Sahalee Estates, with more than $85 million sold, she brings trusted local expertise to Sahalee Estates, Timberline Ridge, and Heritage Hills.</p>
         <p class="lede">Ericka consistently ranks among the top individual agents in Washington by sales volume and top 1.5% nationwide.</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#contact">Plan your sale</a>
-          <a class="btn btn-ghost" href="#listings">See recent sales</a>
-        </div>
       </div>
       <figure class="portrait hero-photo">
-        <img src="/images/ericka-nash-portrait.jpg" width="1024" height="1280" alt="Ericka Nash, Compass Realtor in Sammamish" fetchpriority="high">
+        <img src="/images/ericka-nash-portrait.jpg" width="1024" height="1280" alt="Ericka Nash, Compass Realtor in Sammamish" loading="lazy">
       </figure>
     </div>
   </section>
@@ -1109,6 +1116,17 @@ document.getElementById("contact-form").addEventListener("submit", async e => {
   btn.addEventListener("click", () => set(panel.hidden));
   panel.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
   addEventListener("keydown", e => { if (e.key === "Escape") set(false); });
+})();
+</script>
+<script>
+(function heroReel() {
+  const v = document.querySelector(".hero-reel-video");
+  if (!v) return;
+  const tall = matchMedia("(orientation: portrait)").matches;
+  v.poster = tall ? v.dataset.posterPortrait : v.dataset.posterLandscape;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  v.src = tall ? v.dataset.portrait : v.dataset.landscape;
+  v.play().catch(() => {});
 })();
 </script>
 </body>

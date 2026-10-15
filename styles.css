@@ -573,3 +573,18 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 }
 .ig-modal-top { background: #f5f5f5; padding: .4rem .75rem; line-height: 1; }
 .ig-modal-top .ig-modal-close { color: #0a0a0a; font-size: 2rem; }
+
+/* Hero video reel (cuts from the three home tours), like fosterrealty.com */
+.hero-reel { position: relative; overflow: hidden; display: grid; place-items: center; min-height: calc(100svh - 4.5rem); background: #0a0a0a; color: #fff; text-align: center; }
+.hero-reel-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-reel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)); }
+.hero-reel-copy { position: relative; z-index: 1; padding: 3rem 1.25rem; max-width: 52rem; }
+.hero-reel .eyebrow { color: rgba(255,255,255,.85); letter-spacing: .2em; }
+.hero-reel h1 { color: #fff; font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 1rem 0 .75rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
+.hero-reel-sub { text-transform: uppercase; letter-spacing: .22em; font-size: .9rem; margin: 0 0 2rem; }
+.hero-reel .actions { justify-content: center; }
+.hero-reel .btn-solid { background: #fff; color: #0a0a0a; border-color: #fff; }
+.hero-reel .btn-solid:hover { background: transparent; color: #fff; }
+.hero-reel .btn-ghost { color: #fff; border-color: rgba(255,255,255,.7); }
+.hero-reel .btn-ghost:hover { border-color: #fff; }
+@media (min-width: 56rem) { .hero-reel { min-height: min(calc(100svh - 5rem), 56.25vw); } }
