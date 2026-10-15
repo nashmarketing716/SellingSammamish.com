@@ -749,6 +749,15 @@
         <a class="ig-sq ig-reel" data-video="/video/3212-211th-ave-ne-tour.mp4" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/3212-211th-ave-ne-poster.jpg" alt="Video tour of 3212 211th Ave NE" loading="lazy"></a>
         <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/open-house-2422.jpg" alt="Open house in Sammamish" loading="lazy"></a>
         <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/open-house-evening.jpg" alt="Open house in Sammamish at dusk" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-2025-208th-pl-ne.jpg" alt="Front of 2025 208th Place NE, Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-2457-204th-terrace-ne.jpg" alt="Aerial view at dusk over 2457 204th Terrace NE and Lake Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-19514-se-16th-st.jpg" alt="19514 SE 16th Street, Sammamish, at sunset" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-3049-205th-ct-ne.jpg" alt="Front of 3049 205th Court NE, Sammamish, lit up at dusk" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-21845-ne-30th-pl.jpg" alt="Aerial view of 21845 NE 30th Place, Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-21815-ne-29th-st.jpg" alt="Brick and shingle front of 21815 NE 29th Street, Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-20519-ne-24th-pl.jpg" alt="Front of 20519 NE 24th Place, Sammamish, with a red Japanese maple" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-3212-211th-ave-ne.jpg" alt="Pool and patio behind 3212 211th Ave NE, Sammamish, at sunset" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/listing-2520-sahalee-dr-w.jpg" alt="2520 Sahalee Drive West, Sammamish, framed by tall evergreens" loading="lazy"></a>
       </div>
       <dialog class="ig-modal" id="ig-modal" aria-label="Instagram post">
         <div class="ig-modal-bar">
@@ -977,12 +986,27 @@ document.getElementById("contact-form").addEventListener("submit", async e => {
   }
 });
 
-/* Instagram grid: compact, expands on "Show more" */
-document.querySelector(".ig-more")?.addEventListener("click", e => {
-  const open = document.getElementById("ig-feed").classList.toggle("open");
-  e.currentTarget.setAttribute("aria-expanded", open);
-  e.currentTarget.textContent = open ? "Show less" : "Show more";
-});
+/* Instagram grid: compact, each "Show more" adds a row */
+(() => {
+  const grid = document.getElementById("ig-feed"), btn = document.querySelector(".ig-more");
+  if (!grid || !btn) return;
+  const tiles = [...grid.querySelectorAll(".ig-sq")];
+  const cols = () => getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+  const start = () => cols() * (cols() >= 4 ? 2 : 3);
+  let shown = 0;
+  const show = n => {
+    shown = Math.min(n, tiles.length);
+    tiles.forEach((t, i) => t.hidden = i >= shown);
+    const done = shown >= tiles.length;
+    btn.textContent = done ? "Show less" : "Show more";
+    btn.setAttribute("aria-expanded", shown > start());
+  };
+  btn.addEventListener("click", () => {
+    if (shown >= tiles.length) { show(start()); grid.scrollIntoView({ block: "nearest" }); }
+    else show(shown + (cols() >= 4 ? cols() : cols() * 2));
+  });
+  show(start());
+})();
 
 /* Instagram grid: open each post in a pop-up on the page */
 (() => {
