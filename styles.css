@@ -528,7 +528,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .feat-btn { display: block; text-align: center; padding: .95rem .5rem; border: 1px solid var(--on-fir); color: var(--on-fir); text-decoration: none; font-weight: 600; }
 .feat-btn:hover { background: var(--on-fir); color: var(--fir); }
 .feat-nav { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
-.feat-nums { display: flex; gap: 1rem; }
+.feat-nums { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem .9rem; }
 .feat-num { background: none; border: 0; padding: .25rem; color: var(--on-fir-muted); opacity: .6; font: inherit; font-size: .9rem; font-weight: 600; letter-spacing: .05em; cursor: pointer; }
 .feat-num[aria-current="true"] { color: var(--on-fir); opacity: 1; }
 .feat-next { width: 5rem; height: 2rem; background: none; border: 0; cursor: pointer; position: relative; }
