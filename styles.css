@@ -502,3 +502,13 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .menu-panel a:last-child { border-bottom: 0; }
 @media (max-width: 46rem) { .menu-btn { display: flex; } }
 @media (min-width: 46.01rem) { .menu-panel { display: none !important; } }
+
+/* Instagram pop-up */
+.ig-modal { width: min(92vw, 30rem); max-height: 92vh; padding: 0; border: 0; background: #fff; color: #0a0a0a; overflow: auto; }
+.ig-modal::backdrop { background: rgba(0,0,0,.75); }
+.ig-modal-bar { display: flex; align-items: center; gap: 1rem; padding: .8rem 1rem; background: #0a0a0a; color: #fff; }
+.ig-modal-handle { font-weight: 600; font-size: .95rem; flex: 1; }
+.ig-modal-follow { color: #4da3ff; font-weight: 600; text-decoration: none; font-size: .95rem; }
+.ig-modal-close { background: none; border: 0; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; padding: 0 .25rem; }
+.ig-modal-media img, .ig-modal-media video { display: block; width: 100%; height: auto; max-height: 75vh; object-fit: contain; background: #000; }
+.ig-modal-cap { margin: 0; padding: .9rem 1rem 1.1rem; font-size: .92rem; }
