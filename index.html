@@ -28,88 +28,119 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "RealEstateAgent",
- "@id": "https://sellingsammamish.com/#ericka",
- "name": "Ericka Nash",
- "url": "https://sellingsammamish.com/",
- "image": "https://sellingsammamish.com/images/ericka-nash.jpg",
- "logo": "https://sellingsammamish.com/images/logo-black.png",
- "telephone": "+1-425-410-3865",
- "email": "ericka.nash@compass.com",
- "jobTitle": "Broker",
- "worksFor": {
-  "@type": "RealEstateAgent",
-  "name": "Compass"
- },
- "description": "#1 Realtor in Sahalee Estates and a top Sammamish, WA real estate broker specializing in luxury and golf and country club homes.",
- "address": {
-  "@type": "PostalAddress",
-  "addressLocality": "Sammamish",
-  "addressRegion": "WA",
-  "postalCode": "98074",
-  "addressCountry": "US"
- },
- "areaServed": [
+ "@graph": [
   {
-   "@type": "City",
-   "name": "Sammamish, WA"
+   "@type": "Person",
+   "@id": "https://sellingsammamish.com/#ericka",
+   "name": "Ericka Nash",
+   "url": "https://sellingsammamish.com/",
+   "image": "https://sellingsammamish.com/images/ericka-nash.jpg",
+   "jobTitle": "Real Estate Broker",
+   "telephone": "+1-425-410-3865",
+   "email": "ericka.nash@compass.com",
+   "worksFor": {
+    "@type": "RealEstateAgent",
+    "@id": "https://www.compass.com/#organization",
+    "name": "Compass",
+    "url": "https://www.compass.com/"
+   },
+   "description": "#1 Realtor in Sahalee Estates and a top Sammamish, WA real estate broker specializing in luxury and golf and country club homes.",
+   "knowsAbout": [
+    "Sahalee Estates",
+    "Sahalee Country Club",
+    "Timberline Sammamish",
+    "Heritage Hills Sammamish",
+    "Sammamish real estate",
+    "Luxury homes",
+    "Golf course homes",
+    "Home staging"
+   ],
+   "award": [
+    "#1 Realtor in Sahalee Estates",
+    "Top Producing Sahalee Realtor 2020-2026",
+    "RealTrends The Thousand 2019-2025",
+    "RealTrends Top 1.5% Nationwide 2026",
+    "Ranked #111 individual agent by volume in Washington State"
+   ],
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Washington"
+   },
+   "sameAs": [
+    "https://www.compass.com/agents/ericka-nash/",
+    "https://www.zillow.com/profile/erickanash",
+    "https://www.instagram.com/ericka.nash.real.estate/",
+    "https://www.linkedin.com/in/erickanash/",
+    "https://www.facebook.com/share/1QBZ1ibz4Q/"
+   ],
+   "workLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Sammamish",
+     "addressRegion": "WA",
+     "postalCode": "98074",
+     "addressCountry": "US"
+    }
+   }
   },
   {
-   "@type": "Place",
-   "name": "Sahalee Estates, Sammamish, WA"
-  },
-  {
-   "@type": "Place",
-   "name": "Timberline, Sammamish, WA"
-  },
-  {
-   "@type": "Place",
-   "name": "Heritage Hills, Sammamish, WA"
-  },
-  {
-   "@type": "City",
-   "name": "Redmond, WA"
-  },
-  {
-   "@type": "City",
-   "name": "Bellevue, WA"
-  },
-  {
-   "@type": "City",
-   "name": "Issaquah, WA"
-  },
-  {
-   "@type": "City",
-   "name": "Kirkland, WA"
+   "@type": "RealEstateAgent",
+   "@id": "https://sellingsammamish.com/#business",
+   "name": "Ericka Nash Real Estate",
+   "url": "https://sellingsammamish.com/",
+   "logo": "https://sellingsammamish.com/images/logo-black.png",
+   "image": "https://sellingsammamish.com/images/ericka-nash.jpg",
+   "telephone": "+1-425-410-3865",
+   "email": "ericka.nash@compass.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sammamish",
+    "addressRegion": "WA",
+    "postalCode": "98074",
+    "addressCountry": "US"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Sammamish, WA"
+    },
+    {
+     "@type": "Place",
+     "name": "Sahalee Estates, Sammamish, WA"
+    },
+    {
+     "@type": "Place",
+     "name": "Timberline, Sammamish, WA"
+    },
+    {
+     "@type": "Place",
+     "name": "Heritage Hills, Sammamish, WA"
+    },
+    {
+     "@type": "City",
+     "name": "Redmond, WA"
+    },
+    {
+     "@type": "City",
+     "name": "Bellevue, WA"
+    },
+    {
+     "@type": "City",
+     "name": "Issaquah, WA"
+    },
+    {
+     "@type": "City",
+     "name": "Kirkland, WA"
+    }
+   ],
+   "parentOrganization": {
+    "@id": "https://www.compass.com/#organization"
+   },
+   "employee": {
+    "@id": "https://sellingsammamish.com/#ericka"
+   }
   }
- ],
- "knowsAbout": [
-  "Sahalee Estates",
-  "Sahalee Country Club",
-  "Timberline Sammamish",
-  "Heritage Hills Sammamish",
-  "Sammamish real estate",
-  "Luxury homes",
-  "Golf course homes",
-  "Home staging"
- ],
- "award": [
-  "#1 Realtor in Sahalee Estates",
-  "Top Producing Sahalee Realtor 2020-2026",
-  "RealTrends The Thousand 2019-2025",
-  "RealTrends Top 1.5% Nationwide 2026",
-  "Ranked #111 individual agent by volume in Washington State"
- ],
- "alumniOf": {
-  "@type": "CollegeOrUniversity",
-  "name": "University of Washington"
- },
- "sameAs": [
-  "https://www.compass.com/agents/ericka-nash/",
-  "https://www.zillow.com/profile/erickanash",
-  "https://www.instagram.com/ericka.nash.real.estate/",
-  "https://www.linkedin.com/in/erickanash/",
-  "https://www.facebook.com/share/1QBZ1ibz4Q/"
  ]
 }
 </script>
@@ -139,7 +170,7 @@
    "name": "How much do homes in Sahalee Estates sell for?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Ericka's recent Sahalee-area sales have ranged from about $2.1 million to $3.8 million, depending on lot, size, updates and golf course frontage. Contact Ericka for a current valuation of a specific home."
+    "text": "Ericka's recent Sahalee-area sales listed on this page ranged from about $2.1 million to $3.8 million, depending on lot, size, updates and golf course frontage. Those are examples from her own sales, not a price range for every home in the neighborhood. Contact Ericka for a current valuation of a specific home."
    }
   },
   {
@@ -303,7 +334,7 @@
         <div class="hood">
           <span class="zip">Sammamish · 98074</span>
           <h3><a href="/timberline/">Timberline</a></h3>
-          <p>A wooded north-plateau community of larger lots and quiet cul-de-sacs, close to Eastlake schools and an easy drive to Redmond.</p>
+          <p>A wooded north-plateau community, including the Timberline Ridge area, with larger lots and quiet cul-de-sacs close to Eastlake schools and an easy drive to Redmond.</p>
           <span class="hood-tag">Neighborhood expert</span>
           <a class="hood-link" href="/timberline/">Timberline homes &amp; market →</a>
         </div>
@@ -369,6 +400,7 @@
           <p class="eyebrow">Video tour</p>
           <h3>2457 204th Terrace NE, Sammamish</h3>
           <p class="lede">Walk through one of Ericka's Sammamish listings, from the water views to the gardens, the covered entry and the light-filled great room.</p>
+          <p class="tour-facts">Sold for $3,795,000 · 5 bed / 4 bath · 4,730 sq ft · 0.27 acres</p>
         </div>
         <div class="tour-video">
           <video controls playsinline preload="none" poster="/images/2457-204th-terrace-ne-poster.jpg" width="540" height="960" aria-label="Video tour of 2457 204th Terrace NE, Sammamish">
@@ -382,6 +414,7 @@
           <p class="eyebrow">Video tour</p>
           <h3>3212 211th Ave NE, Sammamish</h3>
           <p class="lede">An evening walk through one of Ericka's Sahalee Country Club Estates listings, from the lit pool and patio to the fire pit and outdoor dining.</p>
+          <p class="tour-facts">Pending · listed at $1,790,000 · 5 bed / 4 bath · 3,570 sq ft · 0.23 acres</p>
         </div>
         <div class="tour-video">
           <video controls playsinline preload="none" poster="/images/3212-211th-ave-ne-poster.jpg" width="540" height="960" aria-label="Video tour of 3212 211th Ave NE, Sammamish">
@@ -415,7 +448,7 @@
           <p class="eyebrow">Sales ledger</p>
           <h2>Recent Sammamish home sales and listings</h2>
         </div>
-        <p class="lede">Twenty recent Eastside homes from Ericka's 104 sales, averaging $1.7M. Filter by city to see where she works most.</p>
+        <p class="lede">Eighteen recent Eastside sales from Ericka's 104, plus her two current listings. Filter by city to see where she works most.</p>
       </div>
       <div class="ledger-tools" role="group" aria-label="Filter by city" id="filters"></div>
       <div class="ledger-scroll">
@@ -423,12 +456,33 @@
           <thead>
             <tr><th>Address</th><th>City</th><th>Status</th><th class="num">Bd / Ba</th><th class="num">Sq ft</th><th class="num">Acres</th><th class="price">Price</th></tr>
           </thead>
-          <tbody id="ledger-body"></tbody>
+          <tbody id="ledger-body">
+            <tr data-city="Sammamish"><td class="addr">3212 211th Ave NE</td><td>Sammamish</td><td><span class="status pending">pending</span></td><td class="num">5 / 4</td><td class="num">3,570</td><td class="num">0.23</td><td class="price">$1,790,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">21845 NE 30th Pl</td><td>Sammamish</td><td><span class="status active">active</span></td><td class="num">6 / 4</td><td class="num">4,470</td><td class="num">0.27</td><td class="price">$1,725,000</td></tr>
+            <tr data-city="Redmond"><td class="addr">7240 252nd Ave NE</td><td>Redmond</td><td><span class="status sold">sold</span></td><td class="num">5 / 5</td><td class="num">6,003</td><td class="num">3.05</td><td class="price">$3,995,000</td></tr>
+            <tr data-city="Bellevue"><td class="addr">16724 SE 28th St</td><td>Bellevue</td><td><span class="status sold">sold</span></td><td class="num">5 / 5</td><td class="num">4,638</td><td class="num">0.25</td><td class="price">$3,810,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2457 204th Ter NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 4</td><td class="num">4,730</td><td class="num">0.27</td><td class="price">$3,795,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2025 208th Pl NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 5</td><td class="num">4,805</td><td class="num">0.29</td><td class="price">$3,480,000</td></tr>
+            <tr data-city="Bellevue"><td class="addr">923 168th Ave NE</td><td>Bellevue</td><td><span class="status sold">sold</span></td><td class="num">5 / 5</td><td class="num">4,095</td><td class="num">0.18</td><td class="price">$2,900,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">21713 NE 29th St</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">3 / 3</td><td class="num">3,834</td><td class="num">0.28</td><td class="price">$2,830,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">19514 SE 16th St</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 4</td><td class="num">4,180</td><td class="num">0.92</td><td class="price">$2,688,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">3049 205th Ct NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">4 / 4</td><td class="num">4,306</td><td class="num">0.31</td><td class="price">$2,659,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">21815 NE 29th St</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 4</td><td class="num">3,850</td><td class="num">0.33</td><td class="price">$2,595,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">20519 NE 24th Pl</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 4</td><td class="num">5,240</td><td class="num">0.28</td><td class="price">$2,350,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2520 Sahalee Dr W</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">4 / 3</td><td class="num">2,910</td><td class="num">0.28</td><td class="price">$2,275,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2057 213th Ave NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">4 / 4</td><td class="num">3,360</td><td class="num">0.32</td><td class="price">$2,260,000</td></tr>
+            <tr data-city="Issaquah"><td class="addr">5800 187th Ave SE</td><td>Issaquah</td><td><span class="status sold">sold</span></td><td class="num">5 / 3</td><td class="num">4,433</td><td class="num">3.56</td><td class="price">$2,231,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2315 216th Pl NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">4 / 3</td><td class="num">3,210</td><td class="num">0.28</td><td class="price">$2,220,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">2309 Sahalee Dr E</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">3 / 3</td><td class="num">3,500</td><td class="num">0.22</td><td class="price">$2,200,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">213 259th Ave NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">5 / 5</td><td class="num">4,200</td><td class="num">0.20</td><td class="price">$2,185,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">20512 NE 27th Pl</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">3 / 4</td><td class="num">3,230</td><td class="num">0.18</td><td class="price">$2,120,000</td></tr>
+            <tr data-city="Sammamish"><td class="addr">3054 205th Ct NE</td><td>Sammamish</td><td><span class="status sold">sold</span></td><td class="num">4 / 4</td><td class="num">3,940</td><td class="num">0.24</td><td class="price">$2,075,000</td></tr>
+          </tbody>
         </table>
       </div>
       <div class="ledger-foot">
-        <span>Showing <strong id="ledger-count">0</strong> homes · total <strong id="ledger-total">$0</strong></span>
-        <span>A selection of her 104 sales. Source: Compass agent profile.</span>
+        <span><strong id="ledger-count">18 sales</strong> · <strong id="ledger-total">$48.7M</strong> sold<span id="ledger-listings">, plus 2 current listings (pending and active, not counted in the total)</span></span>
+        <span>A selection of her 104 sales. Source: Compass agent profile, October 2026.</span>
       </div>
     </div>
   </section>
@@ -613,7 +667,7 @@
       <div class="faq">
         <details class="faq-item"><summary>Who is the top Realtor in Sahalee Estates?</summary><p>Ericka Nash of Compass is the #1 Realtor in Sahalee Estates in Sammamish, WA. She has sold more than $85 million in Sahalee and has been the top producing Sahalee Realtor every year from 2020 through 2026.</p></details>
         <details class="faq-item"><summary>What neighborhoods in Sammamish does Ericka Nash specialize in?</summary><p>Ericka specializes in Sahalee Estates, Timberline and Heritage Hills on the north Sammamish plateau (ZIP 98074), and also sells homes across Sammamish, Redmond, Bellevue, Issaquah and Kirkland.</p></details>
-        <details class="faq-item"><summary>How much do homes in Sahalee Estates sell for?</summary><p>Ericka's recent Sahalee-area sales have ranged from about $2.1 million to $3.8 million, depending on lot, size, updates and golf course frontage. Contact Ericka for a current valuation of a specific home.</p></details>
+        <details class="faq-item"><summary>How much do homes in Sahalee Estates sell for?</summary><p>Ericka's recent Sahalee-area sales listed on this page ranged from about $2.1 million to $3.8 million, depending on lot, size, updates and golf course frontage. Those are examples from her own sales, not a price range for every home in the neighborhood. Contact Ericka for a current valuation of a specific home.</p></details>
         <details class="faq-item"><summary>How do I sell my Sammamish home for top dollar?</summary><p>Ericka combines interior design experience with Compass Concierge, which can fund staging and pre-listing improvements paid at closing, plus pricing built on Sahalee and Sammamish comparable sales. One Sammamish seller received a full-price offer and closed in two and a half weeks.</p></details>
         <details class="faq-item"><summary>Is Ericka Nash a good real estate agent?</summary><p>Ericka has a 5.0 rating on Zillow across all client reviews, ranks in the top 1.5% of agents nationwide, and has been named to the RealTrends Thousand every year from 2019 to 2025.</p></details>
         <details class="faq-item"><summary>How do I contact Ericka Nash?</summary><p>Call or text Ericka at (425) 410-3865 or email ericka.nash@compass.com.</p></details>
@@ -706,13 +760,12 @@ const cities = ["All", ...new Set(homes.map(h => h[1]))];
 let current = "All";
 
 function render() {
-  const rows = homes.filter(h => current === "All" || h[1] === current);
-  body.innerHTML = rows.map(([a, c, s, bd, ba, sf, ac, p]) =>
-    `<tr><td class="addr">${a}</td><td>${c}</td><td><span class="status ${s}">${s}</span></td>` +
-    `<td class="num">${bd} / ${ba}</td><td class="num">${sf.toLocaleString("en-US")}</td>` +
-    `<td class="num">${ac.toFixed(2)}</td><td class="price">${usd(p)}</td></tr>`).join("");
-  document.getElementById("ledger-count").textContent = rows.length;
-  document.getElementById("ledger-total").textContent = short(rows.reduce((t, h) => t + h[7], 0));
+  const sold = homes.filter(h => (current === "All" || h[1] === current) && h[2] === "sold");
+  const listings = homes.filter(h => (current === "All" || h[1] === current) && h[2] !== "sold").length;
+  body.querySelectorAll("tr").forEach(tr => { tr.hidden = !(current === "All" || tr.dataset.city === current); });
+  document.getElementById("ledger-count").textContent = `${sold.length} sale${sold.length === 1 ? "" : "s"}`;
+  document.getElementById("ledger-total").textContent = short(sold.reduce((t, h) => t + h[7], 0));
+  document.getElementById("ledger-listings").textContent = listings ? `, plus ${listings} current listing${listings > 1 ? "s" : ""} (pending and active, not counted in the total)` : "";
   filters.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.city === current));
 }
 cities.forEach(c => {
