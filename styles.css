@@ -454,3 +454,24 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
   .tour-card .tour-cta { display: grid; }
   .tour-nav, .tour-cta-mobile { display: none; }
 }
+
+/* Reviews as letters */
+.letters { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .25rem; }
+.letters::-webkit-scrollbar { display: none; }
+.letter { flex: 0 0 100%; scroll-snap-align: start; margin: 0; padding: 1.75rem 1.5rem; background: #fff; color: #0a0a0a; border: 1px solid #0a0a0a; display: flex; flex-direction: column; gap: 1rem; }
+.letter-text { margin: 0; font-family: var(--display); font-size: 1.12rem; line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; line-clamp: 8; overflow: hidden; }
+.letter-text p { margin: 0; display: inline; }
+.letter-text p + p::before { content: " "; }
+.letter.expanded .letter-text { display: block; -webkit-line-clamp: unset; line-clamp: none; }
+.letter.expanded .letter-text p { display: block; }
+.letter.expanded .letter-text p + p { margin-top: 1rem; }
+.letter.expanded .letter-text p + p::before { content: none; }
+.letter-more { align-self: flex-start; background: none; border: 0; padding: 0; font: inherit; font-size: .9rem; font-weight: 600; color: #0a0a0a; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.letter cite { margin-top: auto; padding-top: 1rem; border-top: 1px solid #0a0a0a; font-style: normal; font-size: .82rem; color: #555; letter-spacing: .02em; }
+.letters-nav .tour-arrow { border-color: var(--ink); color: var(--ink); }
+.letters-nav .tour-dot { background: color-mix(in srgb, var(--ink) 25%, transparent); }
+.letters-nav .tour-dot[aria-current="true"] { background: var(--ink); }
+@media (min-width: 56rem) {
+  .letters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; overflow: visible; align-items: stretch; }
+  .letters-nav { display: none; }
+}
