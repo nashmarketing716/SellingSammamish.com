@@ -215,6 +215,7 @@
 <header class="site-head">
   <div class="wrap">
     <a class="mark mark-logo" href="#top" aria-label="Ericka Nash Real Estate, home"><img src="/images/logo-black.png" width="900" height="403" alt="Ericka Nash Real Estate"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#neighborhoods">Neighborhoods</a>
@@ -224,6 +225,13 @@
       <a class="cta-link" href="#contact">Contact</a>
     </nav>
   </div>
+  <nav class="menu-panel" id="menu-panel" aria-label="Menu" hidden>
+    <a href="#about">About</a>
+    <a href="#neighborhoods">Neighborhoods</a>
+    <a href="#sales">Sales</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#services">Services</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -941,5 +949,14 @@ document.querySelector(".ig-more")?.addEventListener("click", e => {
 })();
 </script>
 
+<script>
+(() => {
+  const btn = document.querySelector(".menu-btn"), panel = document.getElementById("menu-panel");
+  const set = open => { btn.setAttribute("aria-expanded", open); panel.hidden = !open; };
+  btn.addEventListener("click", () => set(panel.hidden));
+  panel.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape") set(false); });
+})();
+</script>
 </body>
 </html>
