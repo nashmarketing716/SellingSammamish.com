@@ -588,3 +588,6 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-reel .btn-ghost { color: #fff; border-color: rgba(255,255,255,.7); }
 .hero-reel .btn-ghost:hover { border-color: #fff; }
 @media (min-width: 56rem) { .hero-reel { min-height: min(calc(100svh - 5rem), 56.25vw); } }
+.hero-reel h1 span { display: block; }
+.hero-reel h1 { line-height: 1.05; font-size: clamp(3rem, 8vw, 5.5rem); }
+.hero-reel h1 .amp { font-size: .7em; margin: .1em 0; }
