@@ -456,7 +456,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 }
 
 /* Reviews as letters */
-.letters { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .25rem; }
+.letters { display: flex; align-items: flex-start; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .25rem; }
 .letters::-webkit-scrollbar { display: none; }
 .letter { flex: 0 0 100%; scroll-snap-align: start; margin: 0; padding: 1.75rem 1.5rem; background: #fff; color: #0a0a0a; border: 1px solid #0a0a0a; display: flex; flex-direction: column; gap: 1rem; }
 .letter-text { margin: 0; font-family: var(--display); font-size: 1.12rem; line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; line-clamp: 8; overflow: hidden; }

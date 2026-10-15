@@ -270,7 +270,6 @@
       <div class="letters">
         <figure class="letter">
           <blockquote class="letter-text"><p>“We are Real Estate professionals with decades of experience. When we decided to sell our lovely home of over thirty three years, we wanted someone who could give us outstanding service at all stages of the transaction. We wanted the BEST Real professional available. After an initial interview with Ericka Nash, we were convinced that she would meet our expectations. …spoiler alert…. She exceeded our expectations!</p><p>We would recommend her to anyone looking for a dedicated, straightforward, well informed Broker. Did I mention that her work ethic is amazing? We appreciate the big things and the little things she brought every day to the transaction. We especially appreciate her communication skills. We thought that her ideas for preparing our home for sale were great and we felt that she never lost sight of the costs of these ideas as we worked together with her to maximize our profit on the sale. Bravo, Ericka!! A job well done!”</p></blockquote>
-          <button class="letter-more" type="button" aria-expanded="false">More…</button>
           <cite>Betty Foose · Sold a home in Sammamish · June 2025 · ★★★★★</cite>
         </figure>
         <figure class="letter">
@@ -281,10 +280,22 @@
           <blockquote class="letter-text"><p>“After interviewing for an agent to represent us in the sale of our home, we selected Ericka for her track record in our area, for the thoroughness and hard work she put into presenting her plan for our home, and for her competitive commercial terms.”</p></blockquote>
           <cite>bobwebst · Sold a home in Sammamish · June 2025 · ★★★★★</cite>
         </figure>
+        <figure class="letter">
+          <blockquote class="letter-text"><p>“With increasing competition through increasing inventory, rising interest rates and a rapidly changing market for sellers, Ericka was fantastic! She was able to get a full-price offer and get our house closed in 2 1/2 weeks. I hired Ericka because a neighbor had used her and said she was outstanding. He was right and I will hire Ericka again. I highly recommend her and her professional highly-skilled approach. Thank you Ericka, great job!”</p></blockquote>
+          <cite>Andy Breidenbach · Sold a home in Sammamish · June 2022 · ★★★★★</cite>
+        </figure>
+        <figure class="letter">
+          <blockquote class="letter-text"><p>“Ericka Nash was amazing to work with on the sale of our Bellevue home! Her methodical approach to preparing and marketing our home was unlike anything we had experienced. She guided us through the entire process, from a preliminary home inspection, prioritizing inspection resolutions and cosmetic improvements, through staging. Once the home was ready, Ericka handled photography, listing, marketing, offer review, negotiation, mutual agreement and, finally, closure of the sale. After a couple of days we had many offers, most well over list price, including cash offers. Throughout the process, Ericka was always accessible, prompt, courteous, professional and a pleasure to work with. I cannot say enough to recommend Ericka Nash.”</p></blockquote>
+          <cite>mara715 · Sold a home in Lake Hills, Bellevue · March 2021 · ★★★★★</cite>
+        </figure>
+        <figure class="letter">
+          <blockquote class="letter-text"><p>“Ericka sold our two Sahalee Properties in 2020. I recommend Ericka, especially to anyone looking to buy or sell in Sahalee. She is great to work with, pays attention to the small details and is quick to follow through. We were selling our 2nd property with Ericka when the pandemic restrictions were in place and she helped us navigate the tough environment. She provided safety measures gloves, sanitizer, foot covers. She kept us informed of changes in the market, and was able to get the word out about our property, facilitating a good price.”</p></blockquote>
+          <cite>Zillow reviewer · Sold a home in Sammamish · July 2020 · ★★★★★</cite>
+        </figure>
       </div>
       <div class="tour-nav letters-nav" aria-label="Review controls">
         <button class="tour-arrow" type="button" data-dir="-1" aria-label="Previous review">←</button>
-        <div class="tour-dots"><button type="button" class="tour-dot" aria-label="Review 1" aria-current="true"></button><button type="button" class="tour-dot" aria-label="Review 2"></button><button type="button" class="tour-dot" aria-label="Review 3"></button></div>
+        <div class="tour-dots"><button type="button" class="tour-dot" aria-label="Review 1" aria-current="true"></button><button type="button" class="tour-dot" aria-label="Review 2"></button><button type="button" class="tour-dot" aria-label="Review 3"></button><button type="button" class="tour-dot" aria-label="Review 4"></button><button type="button" class="tour-dot" aria-label="Review 5"></button><button type="button" class="tour-dot" aria-label="Review 6"></button></div>
         <button class="tour-arrow" type="button" data-dir="1" aria-label="Next review">→</button>
       </div>
       <p style="margin-top:2rem"><a class="btn btn-ghost" href="https://www.zillow.com/profile/erickanash" target="_blank" rel="noopener">Read all reviews on Zillow</a></p>
@@ -815,11 +826,37 @@ render();
   nav.querySelectorAll(".tour-arrow").forEach(b => b.addEventListener("click", () => go(current() + Number(b.dataset.dir))));
   track.addEventListener("scroll", () => { const i = current(); dots.forEach((d, j) => d.setAttribute("aria-current", i === j)); }, { passive: true });
 });
-document.querySelectorAll(".letter-more").forEach(b => b.addEventListener("click", () => {
-  const open = b.closest(".letter").classList.toggle("expanded");
-  b.setAttribute("aria-expanded", open);
-  b.textContent = open ? "Less" : "More…";
-}));
+const collapse = () => document.querySelectorAll(".letter.expanded").forEach(l => {
+  l.classList.remove("expanded");
+  const b = l.querySelector(".letter-more"); b.setAttribute("aria-expanded", false); b.textContent = "More…";
+});
+document.querySelectorAll(".letter").forEach(l => {
+  const t = l.querySelector(".letter-text");
+  if (t.scrollHeight <= t.clientHeight + 2) return;
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "letter-more"; b.textContent = "More…"; b.setAttribute("aria-expanded", false);
+  b.addEventListener("click", () => {
+    const open = !l.classList.contains("expanded");
+    collapse();
+    if (open) { l.classList.add("expanded"); b.setAttribute("aria-expanded", true); b.textContent = "Less"; }
+  });
+  t.after(b);
+});
+const sizeLetters = () => {
+  const ls = [...document.querySelectorAll(".letter")];
+  ls.forEach(l => l.style.minHeight = "");
+  const h = Math.max(...ls.filter(l => !l.classList.contains("expanded")).map(l => l.offsetHeight));
+  ls.forEach(l => l.style.minHeight = h + "px");
+};
+sizeLetters();
+addEventListener("resize", sizeLetters);
+addEventListener("load", sizeLetters);
+(() => {
+  const track = document.querySelector(".letters");
+  if (!track) return;
+  let last = 0;
+  track.addEventListener("scroll", () => { const i = Math.round(track.scrollLeft / (track.firstElementChild.offsetWidth || 1)); if (i !== last) { last = i; collapse(); } }, { passive: true });
+})();
 
 document.querySelectorAll("[data-interest]").forEach(a => a.addEventListener("click", () => { document.getElementById("f-interest").value = a.dataset.interest; }));
 
