@@ -444,7 +444,18 @@
           </div>
         </article>
       </div>
-      <p class="tour-hint" aria-hidden="true">Swipe for more tours →</p>
+      <div class="tour-nav" aria-label="Video tour controls">
+        <button class="tour-arrow" type="button" data-dir="-1" aria-label="Previous tour">←</button>
+        <div class="tour-dots">
+          <button type="button" class="tour-dot" aria-label="Tour 1" aria-current="true"></button>
+          <button type="button" class="tour-dot" aria-label="Tour 2"></button>
+          <button type="button" class="tour-dot" aria-label="Tour 3"></button>
+        </div>
+        <button class="tour-arrow" type="button" data-dir="1" aria-label="Next tour">→</button>
+      </div>
+      <div class="tour-copy tour-cta-mobile">
+        <a class="btn btn-solid" href="#contact" data-interest="Free home valuation">Free Home Valuation</a>
+      </div>
     </div>
   </section>
 
@@ -783,6 +794,18 @@ cities.forEach(c => {
   filters.appendChild(b);
 });
 render();
+
+(() => {
+  const track = document.querySelector(".tour");
+  if (!track) return;
+  const cards = [...track.querySelectorAll(".tour-card")];
+  const dots = [...document.querySelectorAll(".tour-dot")];
+  const go = i => { i = Math.max(0, Math.min(cards.length - 1, i)); track.scrollTo({ left: cards[i].offsetLeft - track.offsetLeft, behavior: "smooth" }); };
+  const current = () => Math.round(track.scrollLeft / (cards[0].offsetWidth || 1));
+  dots.forEach((d, i) => d.addEventListener("click", () => go(i)));
+  document.querySelectorAll(".tour-arrow").forEach(b => b.addEventListener("click", () => go(current() + Number(b.dataset.dir))));
+  track.addEventListener("scroll", () => { const c = current(); dots.forEach((d, i) => d.setAttribute("aria-current", i === c)); }, { passive: true });
+})();
 
 document.querySelectorAll("[data-interest]").forEach(a => a.addEventListener("click", () => { document.getElementById("f-interest").value = a.dataset.interest; }));
 

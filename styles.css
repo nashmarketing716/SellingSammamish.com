@@ -439,3 +439,18 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
   .tour-hint { display: none; }
 }
 .tour-card .tour-copy { align-content: start; }
+
+/* Mobile tour carousel: one full-width tour, dots and arrows, one button */
+.tour-card { flex: 0 0 100%; }
+.tour-card .tour-cta { display: none; }
+.tour-nav { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.25rem; }
+.tour-arrow { width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgba(255,255,255,.6); background: transparent; color: #fff; font-size: 1.1rem; cursor: pointer; }
+.tour-dots { display: flex; gap: .6rem; }
+.tour-dot { width: .6rem; height: .6rem; border-radius: 50%; border: 0; padding: 0; background: rgba(255,255,255,.35); cursor: pointer; }
+.tour-dot[aria-current="true"] { background: #fff; }
+.tour-cta-mobile { margin-top: 1.5rem; justify-items: center; max-width: none; }
+.tour-hint { display: none; }
+@media (min-width: 56rem) {
+  .tour-card .tour-cta { display: grid; }
+  .tour-nav, .tour-cta-mobile { display: none; }
+}
