@@ -658,12 +658,21 @@
           <li><a href="https://www.compass.com/agents/ericka-nash/" target="_blank" rel="noopener">Compass profile</a></li>
         </ul>
       </div>
-      <div class="ig-feed" id="ig-feed">
-        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Listing tours</span></a>
-        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Sahalee market updates</span></a>
-        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Just sold</span></a>
-        <a class="ig-tile" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><span>Life in Sammamish</span></a>
+      <div class="ig-grid" id="ig-feed">
+        <a class="ig-sq ig-reel" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/2457-204th-terrace-ne-poster.jpg" alt="Video tour of 2457 204th Terrace NE" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-country-club-estates.jpg" alt="Sahalee Country Club Estates home with a lit pool at dusk" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-retreat.jpg" alt="Pacific Northwest retreat in Sahalee Estates, Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-just-sold.jpg" alt="Just sold in Sahalee Estates" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/timberline-ridge-pending.jpg" alt="Pending in Timberline Ridge, overlooking Lake Sammamish" loading="lazy"></a>
+        <a class="ig-sq ig-reel" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/19828-se-8th-st-poster.jpg" alt="Video tour of 19828 SE 8th St" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/open-house-21845-ne-30th.jpg" alt="Open house at 21845 NE 30th Place, Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/timberline-ridge-just-sold.jpg" alt="Just sold in Timberline Ridge" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/sahalee-pending.jpg" alt="Pending in Sahalee" loading="lazy"></a>
+        <a class="ig-sq ig-reel" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/3212-211th-ave-ne-poster.jpg" alt="Video tour of 3212 211th Ave NE" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/open-house-2422.jpg" alt="Open house in Sammamish" loading="lazy"></a>
+        <a class="ig-sq" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener"><img src="/images/open-house-evening.jpg" alt="Open house in Sammamish at dusk" loading="lazy"></a>
       </div>
+      <p class="ig-more-row"><button class="btn btn-ghost ig-more" type="button" aria-expanded="false">Show more</button></p>
     </div>
   </section>
 
@@ -881,22 +890,12 @@ document.getElementById("contact-form").addEventListener("submit", async e => {
   }
 });
 
-/* Instagram: post or reel links to show as live embeds. */
-const instagramPosts = [
-  "https://www.instagram.com/reel/DcrcjP7SIMM/",
-  "https://www.instagram.com/reel/DeaQUBmhInE/",
-  "https://www.instagram.com/reel/DYA9xYOv-9l/",
-  "https://www.instagram.com/reel/DXzqAYDTLqi/",
-  "https://www.instagram.com/p/DZVsmiBSXac/"
-];
-if (instagramPosts.length) {
-  const feed = document.getElementById("ig-feed");
-  feed.classList.add("has-embeds");
-  feed.innerHTML = instagramPosts.map(u => `<blockquote class="instagram-media" data-instgrm-permalink="${u}" data-instgrm-version="14"><a href="${u}">View on Instagram</a></blockquote>`).join("");
-  const sc = document.createElement("script");
-  sc.async = true; sc.src = "https://www.instagram.com/embed.js";
-  document.body.appendChild(sc);
-}
+/* Instagram grid: compact, expands on "Show more" */
+document.querySelector(".ig-more")?.addEventListener("click", e => {
+  const open = document.getElementById("ig-feed").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", open);
+  e.currentTarget.textContent = open ? "Show less" : "Show more";
+});
 
 /* Listing strip arrows */
 (function () {
