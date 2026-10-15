@@ -17,7 +17,7 @@
   --flag-bg: #efefef;
   --flag-fg: #333333;
 
-  --display: "Cardo", Georgia, serif;
+  --display: "Times New Roman", "Tinos", Times, serif;
   --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
@@ -592,5 +592,5 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-reel h1 { line-height: 1.05; font-size: clamp(3rem, 8vw, 5.5rem); }
 .hero-reel h1 .amp { font-size: .7em; margin: .1em 0; }
 
-/* Headline font: Cardo, the closest free match to the fosterrealty.com headlines */
+/* Headline font: Times New Roman, like "Meet the Founders" on fosterrealty.com (Tinos is the free look-alike for devices without it) */
 h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
