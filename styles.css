@@ -512,3 +512,28 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .ig-modal-close { background: none; border: 0; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; padding: 0 .25rem; }
 .ig-modal-media img, .ig-modal-media video { display: block; width: 100%; height: auto; max-height: 75vh; object-fit: contain; background: #000; }
 .ig-modal-cap { margin: 0; padding: .9rem 1rem 1.1rem; font-size: .92rem; }
+
+/* Featured listings carousel */
+.feat { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.feat::-webkit-scrollbar { display: none; }
+.feat-slide { flex: 0 0 100%; scroll-snap-align: start; display: grid; gap: 1.5rem; }
+.feat-photo { aspect-ratio: 4 / 3; overflow: hidden; background: #000; }
+.feat-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.feat-copy { display: grid; gap: .6rem; align-content: center; }
+.feat-status { margin: 0; justify-self: start; font-weight: 600; font-size: .95rem; border-bottom: 2px solid var(--on-fir); padding-bottom: .2rem; }
+.feat-copy h3 { margin: .4rem 0 .2rem; font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.15; }
+.feat-price { margin: 0; font-weight: 700; font-size: 1.15rem; }
+.feat-facts { margin: 0; font-weight: 600; color: var(--on-fir-muted); }
+.feat-btns { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1rem; }
+.feat-btn { display: block; text-align: center; padding: .95rem .5rem; border: 1px solid var(--on-fir); color: var(--on-fir); text-decoration: none; font-weight: 600; }
+.feat-btn:hover { background: var(--on-fir); color: var(--fir); }
+.feat-nav { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+.feat-nums { display: flex; gap: 1rem; }
+.feat-num { background: none; border: 0; padding: .25rem; color: var(--on-fir-muted); opacity: .6; font: inherit; font-size: .9rem; font-weight: 600; letter-spacing: .05em; cursor: pointer; }
+.feat-num[aria-current="true"] { color: var(--on-fir); opacity: 1; }
+.feat-next { width: 5rem; height: 2rem; background: none; border: 0; cursor: pointer; position: relative; }
+.feat-next span { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--on-fir); }
+.feat-next span::after { content: ""; position: absolute; right: 0; top: -5px; width: 10px; height: 10px; border-top: 1px solid var(--on-fir); border-right: 1px solid var(--on-fir); transform: rotate(45deg); }
+@media (min-width: 56rem) {
+  .feat-slide { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
+}

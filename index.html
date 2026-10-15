@@ -385,39 +385,43 @@
           <h2>Sahalee and Timberline Ridge listings</h2>
           <p class="lede">New listings, pending sales and recently sold homes in Sammamish and the Eastside.</p>
         </div>
-        <div class="strip-nav">
-          <button class="strip-btn" type="button" id="strip-prev" aria-label="Previous listings">←</button>
-          <button class="strip-btn" type="button" id="strip-next" aria-label="More listings">→</button>
-        </div>
       </div>
-      <div class="gallery" id="gallery">
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/sahalee-country-club-estates.jpg" width="395" height="433" alt="Sahalee Country Club Estates home with a lit pool at dusk" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/sahalee-retreat.jpg" width="395" height="432" alt="Pacific Northwest retreat in Sahalee Estates, Sammamish" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/sahalee-just-sold.jpg" width="395" height="410" alt="Just sold in Sahalee Estates" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/timberline-ridge-pending.jpg" width="395" height="420" alt="Pending at $2,200,000 in Timberline Ridge, overlooking Lake Sammamish" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/open-house-21845-ne-30th.jpg" width="395" height="392" alt="Open house at 21845 NE 30th Place, Sammamish" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/timberline-ridge-just-sold.jpg" width="395" height="394" alt="Just sold in Timberline Ridge" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/sahalee-pending.jpg" width="395" height="402" alt="Pending in Sahalee" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/open-house-2422.jpg" width="395" height="388" alt="Open house in Sammamish" loading="lazy"></span>
-        </div>
-        <div class="gal-card">
-          <span class="gal-tile"><img src="/images/open-house-evening.jpg" width="395" height="390" alt="Open house in Sammamish at dusk" loading="lazy"></span>
-        </div>
+      <div class="feat" id="feat">
+        <article class="feat-slide">
+          <div class="feat-photo"><img src="/images/sahalee-country-club-estates.jpg" alt="Back of 3212 211th Ave NE at dusk, with the lit pool and patio" loading="lazy"></div>
+          <div class="feat-copy">
+            <p class="feat-status">Pending</p>
+            <h3>3212 211th Ave NE, Sammamish, WA 98074</h3>
+            <p class="feat-price">Listed at $1,790,000</p>
+            <p class="feat-facts">5 beds · 4 baths · 3,570 sq ft</p>
+            <div class="feat-btns"><a class="feat-btn" href="https://www.compass.com/homedetails/3212-211th-Ave-NE-Sammamish-WA-98074/1S1Y2K_pid/" target="_blank" rel="noopener">View listing</a><a class="feat-btn" href="#sales">View all</a></div>
+          </div>
+        </article>
+        <article class="feat-slide">
+          <div class="feat-photo"><img src="/images/open-house-21845-ne-30th.jpg" alt="21845 NE 30th Place, Sammamish" loading="lazy"></div>
+          <div class="feat-copy">
+            <p class="feat-status">Active</p>
+            <h3>21845 NE 30th Pl, Sammamish, WA 98074</h3>
+            <p class="feat-price">$1,725,000</p>
+            <p class="feat-facts">6 beds · 4 baths · 4,470 sq ft</p>
+            <div class="feat-btns"><a class="feat-btn" href="https://www.compass.com/homedetails/21845-NE-30th-Pl-Sammamish-WA-98074/1RGU9N_pid/" target="_blank" rel="noopener">View listing</a><a class="feat-btn" href="#sales">View all</a></div>
+          </div>
+        </article>
+        <article class="feat-slide">
+          <div class="feat-photo"><img src="/images/2457-204th-terrace-ne-poster.jpg" alt="Front garden at 2457 204th Terrace NE, Sammamish" loading="lazy"></div>
+          <div class="feat-copy">
+            <p class="feat-status">Sold</p>
+            <h3>2457 204th Terrace NE, Sammamish, WA 98074</h3>
+            <p class="feat-price">Sold for $3,795,000</p>
+            <p class="feat-facts">5 beds · 4 baths · 4,730 sq ft</p>
+            <div class="feat-btns"><a class="feat-btn" href="https://www.compass.com/homedetails/2457-204th-Ter-NE-Sammamish-WA-98074/2094440843884845841_lid/" target="_blank" rel="noopener">View listing</a><a class="feat-btn" href="#sales">View all</a></div>
+          </div>
+        </article>
+      </div>
+      <div class="feat-nav" aria-label="Featured listing controls">
+        <div class="feat-nums"><button type="button" class="feat-num" aria-label="Listing 1" aria-current="true">01</button><button type="button" class="feat-num" aria-label="Listing 2">02</button><button type="button" class="feat-num" aria-label="Listing 3">03</button></div>
+        <button type="button" class="feat-next" aria-label="Next listing"><span></span></button>
+      </div>
       </div>
       <div class="tour" aria-label="Video tours">
         <article class="tour-card">
@@ -930,13 +934,16 @@ document.querySelector(".ig-more")?.addEventListener("click", e => {
   dlg.addEventListener("close", () => { media.innerHTML = ""; });
 })();
 
-/* Listing strip arrows */
-(function () {
-  const g = document.getElementById("gallery");
-  if (!g) return;
-  const step = () => (g.querySelector(".gal-card")?.getBoundingClientRect().width || 300) + 20;
-  document.getElementById("strip-prev").addEventListener("click", () => g.scrollBy({ left: -step(), behavior: "smooth" }));
-  document.getElementById("strip-next").addEventListener("click", () => g.scrollBy({ left: step(), behavior: "smooth" }));
+/* Featured listings carousel */
+(() => {
+  const track = document.getElementById("feat");
+  if (!track) return;
+  const slides = [...track.children], nums = [...document.querySelectorAll(".feat-num")];
+  const cur = () => Math.round(track.scrollLeft / (slides[0].offsetWidth || 1));
+  const go = i => track.scrollTo({ left: slides[(i + slides.length) % slides.length].offsetLeft - track.offsetLeft, behavior: "smooth" });
+  nums.forEach((n, i) => n.addEventListener("click", () => go(i)));
+  document.querySelector(".feat-next").addEventListener("click", () => go(cur() + 1));
+  track.addEventListener("scroll", () => { const c = cur(); nums.forEach((n, i) => n.setAttribute("aria-current", i === c)); }, { passive: true });
 })();
 
 /* Topographic contours: concentric, noise-warped rings like a course survey. */
