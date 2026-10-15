@@ -397,3 +397,12 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .tour-copy .btn-solid { background: #ffffff; color: #0a0a0a; border: 1px solid #ffffff; }
 .tour-copy .btn-solid:hover { background: transparent; color: #ffffff; }
 .mark span { font-style: normal; }
+/* Stats grid: more visible divider lines */
+.cred { border-bottom: 1px solid rgba(255,255,255,.28); }
+@media (max-width: 55.99rem) {
+  .creds .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cred:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.28); }
+  .cred:nth-child(even) { padding-left: 1.25rem; }
+  .cred:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (min-width: 56rem) { .cred { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.28); } .cred:last-child { border-right: 0; } }
