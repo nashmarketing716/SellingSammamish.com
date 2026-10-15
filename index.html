@@ -382,7 +382,7 @@
           <p class="eyebrow">Video tour</p>
           <h3>2457 204th Terrace NE, Sammamish</h3>
           <p class="lede">Walk through one of Ericka's Sammamish listings, from the water views to the gardens, the covered entry and the light-filled great room.</p>
-          <a class="btn btn-solid" href="https://www.instagram.com/ericka.nash.real.estate/" target="_blank" rel="noopener">More tours on Instagram</a>
+          <a class="btn btn-solid" href="#contact" data-interest="A home valuation">Free Home Evaluation</a>
         </div>
       </div>
     </div>
@@ -705,6 +705,8 @@ cities.forEach(c => {
   filters.appendChild(b);
 });
 render();
+
+document.querySelectorAll("[data-interest]").forEach(a => a.addEventListener("click", () => { document.getElementById("f-interest").value = a.dataset.interest; }));
 
 document.getElementById("contact-form").addEventListener("submit", async e => {
   e.preventDefault();
