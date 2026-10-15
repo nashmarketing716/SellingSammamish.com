@@ -406,3 +406,9 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
   .cred:nth-last-child(-n+2) { border-bottom: 0; }
 }
 @media (min-width: 56rem) { .cred { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.28); } .cred:last-child { border-right: 0; } }
+/* Ericka Nash Real Estate logo */
+.mark-logo { display: inline-flex; align-items: center; line-height: 0; }
+.mark-logo img { display: block; height: 2.6rem; width: auto; }
+@media (min-width: 56rem) { .mark-logo img { height: 3rem; } }
+.contact-logo { display: block; width: 12rem; height: auto; margin-bottom: .5rem; }
+.foot-logo { display: block; width: 9rem; height: auto; }
