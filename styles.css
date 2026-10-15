@@ -594,3 +594,16 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 
 /* Headline font: Times New Roman, like "Meet the Founders" on fosterrealty.com (Tinos is the free look-alike for devices without it) */
 h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
+
+/* Desktop hero: no video, black with the white logo and a scroll cue (like fosterrealty.com) */
+.hero-reel-logo, .hero-scroll { display: none; }
+@media (orientation: landscape) {
+  .hero-reel { min-height: calc(100svh - 4.5rem); }
+  .hero-reel-video, .hero-reel::after { display: none; }
+  .hero-reel-logo { display: block; width: min(20rem, 60vw); height: auto; margin: 0 auto 2rem; }
+  .hero-reel .eyebrow { display: none; }
+  .hero-reel h1 { text-shadow: none; }
+  .hero-reel-copy { padding-bottom: 6rem; }
+  .hero-scroll { display: block; position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3.5rem; }
+  .hero-scroll::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 1px; height: 2.75rem; background: rgba(255,255,255,.8); }
+}
