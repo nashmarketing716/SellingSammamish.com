@@ -363,6 +363,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .band-dark { background: var(--fir); color: var(--on-fir); --ink: var(--on-fir); --muted: var(--on-fir-muted); --brass: var(--on-fir); --line: rgba(255,255,255,.15); border-top: 0 !important; }
 .band-dark .about-copy p { color: var(--on-fir-muted); }
 .band-dark .about-copy p:first-child { color: var(--on-fir); }
+.band-dark .area { background: rgba(255,255,255,.04); }
 
 /* Featured review */
 .quote-feature { margin: 0 0 3rem; padding: clamp(1.5rem, 4vw, 3rem); background: var(--fir); color: var(--on-fir); display: grid; gap: 1.25rem; }
