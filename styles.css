@@ -153,7 +153,12 @@ section.block + section.block { border-top: 1px solid var(--line); }
 /* Sahalee feature */
 .sahalee { background: var(--paper); }
 .sahalee-grid { display: grid; gap: 2.5rem; }
-@media (min-width: 56rem) { .sahalee-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; } }
+.sahalee-grid > .about-photo { margin: 0; }
+@media (min-width: 56rem) {
+  .sahalee-grid { grid-template-columns: 1.1fr 1fr; column-gap: 4rem; row-gap: 3rem; align-items: center; }
+  .sahalee-grid > .sahalee-copy { grid-column: 1 / -1; }
+  .sahalee-copy .lede { max-width: none; }
+}
 .sahalee h2 em { color: var(--brass); }
 .sahalee-copy { display: grid; gap: 1rem; }
 .scorecard { border: 1px solid var(--line); background: var(--fog); }
