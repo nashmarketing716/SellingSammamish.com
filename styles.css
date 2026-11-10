@@ -593,7 +593,6 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-reel-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-reel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)); }
 .hero-reel-copy { position: relative; z-index: 1; padding: 3rem 1.25rem; max-width: 52rem; }
-.hero-reel .eyebrow { color: rgba(255,255,255,.85); letter-spacing: .2em; }
 .hero-reel h1 { color: #fff; font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 1rem 0 .75rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
 .hero-reel-sub { text-transform: uppercase; letter-spacing: .22em; font-size: .9rem; margin: 0 0 2rem; }
 .hero-reel .actions { justify-content: center; }
@@ -615,7 +614,6 @@ h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
   .hero-reel { min-height: calc(100svh - 4.5rem); }
   .hero-reel-video, .hero-reel::after { display: none; }
   .hero-reel-logo { display: block; width: min(20rem, 60vw); height: auto; margin: 0 auto 2rem; }
-  .hero-reel .eyebrow { display: none; }
   .hero-reel h1 { text-shadow: none; }
   .hero-reel-copy { padding-bottom: 6rem; }
   .hero-scroll { display: block; position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3.5rem; }
