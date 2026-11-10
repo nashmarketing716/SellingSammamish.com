@@ -472,8 +472,9 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .letters-nav .tour-dot { background: color-mix(in srgb, var(--ink) 25%, transparent); }
 .letters-nav .tour-dot[aria-current="true"] { background: var(--ink); }
 @media (min-width: 56rem) {
-  .letters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; overflow: visible; align-items: stretch; }
-  .letters-nav { display: none; }
+  .letters { gap: 1.5rem; }
+  .letter { flex-basis: calc((100% - 3rem) / 3); }
+  .letters-nav { display: flex; margin-top: 2rem; }
 }
 
 /* Instagram grid */
