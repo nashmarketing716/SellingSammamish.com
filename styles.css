@@ -394,6 +394,7 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 @media (min-width: 56rem) { .tour-video video { width: auto; height: min(80vh, 40rem); max-width: none; } }
 .tour-copy { display: grid; gap: 1rem; justify-items: start; max-width: 32rem; }
 .tour-copy h3 { font-family: var(--display); font-weight: 400; font-size: var(--step-2, 2rem); line-height: 1.15; margin: 0; color: var(--on-fir); }
+.tour-copy h3 .tour-street, .tour-copy h3 .tour-city { display: block; }
 .tour-copy .btn-solid { background: #ffffff; color: #0a0a0a; border: 1px solid #ffffff; }
 .tour-copy .btn-solid:hover { background: transparent; color: #ffffff; }
 .mark span { font-style: normal; }
