@@ -131,9 +131,18 @@ section.block { padding-block: clamp(3.5rem, 8vw, 6rem); }
 section.block + section.block { border-top: 1px solid var(--line); }
 .head-row { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
 @media (min-width: 56rem) { .head-row { grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; } }
+@media (min-width: 56rem) { .head-row-stack { grid-template-columns: 1fr; gap: 1rem; } .head-row-stack .lede { max-width: none; } }
 
-.about { display: grid; gap: 2.5rem; }
-@media (min-width: 56rem) { .about { grid-template-columns: 1fr 1.2fr; gap: 4rem; } }
+.about { display: grid; gap: 2.5rem; grid-template-areas: "copy" "photo" "facts"; }
+.about > .about-copy { grid-area: copy; }
+.about > .about-photo { grid-area: photo; margin: 0; }
+.about > .facts { grid-area: facts; }
+@media (min-width: 56rem) {
+  .about { grid-template-columns: 1.1fr 1fr; grid-template-rows: auto 1fr; grid-template-areas: "copy photo" "facts photo"; column-gap: 4.5rem; row-gap: 2.5rem; align-items: start; }
+  .about > .about-photo { align-self: stretch; }
+  .about > .facts { align-self: end; }
+  .about > .about-photo img { height: 100%; object-fit: cover; }
+}
 .about-copy { display: grid; gap: 1.1rem; max-width: 38rem; }
 .about-copy p:first-child { font-family: var(--display); font-size: var(--step-2); line-height: 1.25; }
 .facts { display: grid; gap: 0; align-content: start; border-top: 1px solid var(--ink); }
@@ -145,7 +154,12 @@ section.block + section.block { border-top: 1px solid var(--line); }
 /* Sahalee feature */
 .sahalee { background: var(--paper); }
 .sahalee-grid { display: grid; gap: 2.5rem; }
-@media (min-width: 56rem) { .sahalee-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; } }
+.sahalee-grid > .about-photo { margin: 0; }
+@media (min-width: 56rem) {
+  .sahalee-grid { grid-template-columns: 1.1fr 1fr; column-gap: 4rem; row-gap: 3rem; align-items: center; }
+  .sahalee-grid > .sahalee-copy { grid-column: 1 / -1; }
+  .sahalee-copy .lede { max-width: none; }
+}
 .sahalee h2 em { color: var(--brass); }
 .sahalee-copy { display: grid; gap: 1rem; }
 .scorecard { border: 1px solid var(--line); background: var(--fog); }
@@ -580,7 +594,6 @@ footer .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px
 .hero-reel-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-reel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)); }
 .hero-reel-copy { position: relative; z-index: 1; padding: 3rem 1.25rem; max-width: 52rem; }
-.hero-reel .eyebrow { color: rgba(255,255,255,.85); letter-spacing: .2em; }
 .hero-reel h1 { color: #fff; font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 1rem 0 .75rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
 .hero-reel-sub { text-transform: uppercase; letter-spacing: .22em; font-size: .9rem; margin: 0 0 2rem; }
 .hero-reel .actions { justify-content: center; }
@@ -602,7 +615,6 @@ h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
   .hero-reel { min-height: calc(100svh - 4.5rem); }
   .hero-reel-video, .hero-reel::after { display: none; }
   .hero-reel-logo { display: block; width: min(20rem, 60vw); height: auto; margin: 0 auto 2rem; }
-  .hero-reel .eyebrow { display: none; }
   .hero-reel h1 { text-shadow: none; }
   .hero-reel-copy { padding-bottom: 6rem; }
   .hero-scroll { display: block; position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3.5rem; }
