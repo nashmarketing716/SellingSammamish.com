@@ -131,6 +131,7 @@ section.block { padding-block: clamp(3.5rem, 8vw, 6rem); }
 section.block + section.block { border-top: 1px solid var(--line); }
 .head-row { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
 @media (min-width: 56rem) { .head-row { grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; } }
+@media (min-width: 56rem) { .head-row-stack { grid-template-columns: 1fr; gap: 1rem; } .head-row-stack .lede { max-width: none; } }
 
 .about { display: grid; gap: 2.5rem; grid-template-areas: "copy" "photo" "facts"; }
 .about > .about-copy { grid-area: copy; }
