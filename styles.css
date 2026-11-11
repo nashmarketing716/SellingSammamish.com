@@ -622,3 +622,7 @@ h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
   .hero-scroll { display: block; position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3.5rem; }
   .hero-scroll::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 1px; height: 2.75rem; background: rgba(255,255,255,.8); }
 }
+
+/* Hero intro points: small outlined diamond markers */
+.hero-dark .wrap > div > .lede { position: relative; padding-left: 1.6rem; }
+.hero-dark .wrap > div > .lede::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .45rem; height: .45rem; border: 1px solid var(--on-fir); transform: rotate(45deg); }
