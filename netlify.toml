@@ -1,2 +1,27 @@
 [build]
   publish = "."
+
+# Send every old-domain and www address to the same page on erickanash.com (permanent 301).
+[[redirects]]
+  from = "https://sellingsammamish.com/*"
+  to = "https://erickanash.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sellingsammamish.com/*"
+  to = "https://erickanash.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.erickanash.com/*"
+  to = "https://erickanash.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sellingsammamish.netlify.app/*"
+  to = "https://erickanash.com/:splat"
+  status = 301
+  force = true
