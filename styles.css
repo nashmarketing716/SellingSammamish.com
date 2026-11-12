@@ -624,5 +624,5 @@ h1, h2, .tour-copy h3, .feat-copy h3 { font-weight: 400; letter-spacing: 0; }
 }
 
 /* Hero intro points: small outlined diamond markers */
-.hero-dark .wrap > div > .lede-point { position: relative; padding-left: 1.6rem; }
-.hero-dark .wrap > div > .lede-point::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .45rem; height: .45rem; border: 1px solid var(--on-fir); transform: rotate(45deg); }
+.hero-dark .wrap > div > .lede { position: relative; padding-left: 1.6rem; }
+.hero-dark .wrap > div > .lede::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .45rem; height: .45rem; border: 1px solid var(--on-fir); transform: rotate(45deg); }
