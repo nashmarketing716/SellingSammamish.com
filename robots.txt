@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sellingsammamish.com/sitemap.xml
+Sitemap: https://erickanash.com/sitemap.xml
